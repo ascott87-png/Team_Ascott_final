@@ -8,4 +8,6 @@ This repo is for the Midterm Project for COSC 6840. Below are the members that w
 3. Jon Menzel
 
 ## Recording of Automated Script
-[![Recording of Script](https://img.youtube.com/vi/H6LiRrOngAs/0.jpg)](https://youtu.be/H6LiRrOngAs)
+Click on Image to Watch
+{% include youtube.html id="H6LiRrOngAs" %}
+<!-- [![Recording of Script](https://img.youtube.com/vi/H6LiRrOngAs/0.jpg)](https://youtu.be/H6LiRrOngAs) -->
