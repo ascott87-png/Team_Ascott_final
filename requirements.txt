@@ -1,7 +1,6 @@
 # Python Deps
 # Python 3.10+ required
 
-
 # System tools required (install via apt):
 # - binwalk: sudo apt install binwalk
 # - sasquatch dependencies:
