@@ -9,13 +9,13 @@ firmware_files = ["firmware/bare-metal-demo.elf", "firmware/dcs-8000lh.bin", "fi
 #Store results for all firmware files
 all_results = [] 
 
-#Function to run Nosey Parker on an ELF file and return findings
-def run_nosey_parker(target_path, firmware_name):
-    np_ds = f"nosey_datastore_{os.path.basename(firmware_name).replace('.', '_')}"
+#Function to run NP on an ELF file and return findings
+def run_np(target_path, firmware_name):
+    np_ds = f"np_datastore_{os.path.basename(firmware_name).replace('.', '_')}"
     #NP executable
     np_exe = "/home/linuxbrew/.linuxbrew/bin/noseyparker"
-    #Temp file for Nosey Parker output
-    temp_file = "temp_nosey_output.json"
+    #Temp file for NP output
+    temp_file = "temp_np_output.json"
 
     #Remove existing datastore if present, to make script idempotent
     try:
@@ -47,9 +47,6 @@ def run_nosey_parker(target_path, firmware_name):
         print(f"Error: {e}")
         return []
 
-# Create directories
-os.makedirs("extracted", exist_ok=True)
-os.makedirs("report", exist_ok=True)
 
 # Extract .bin files with binwalk
 for file in firmware_files:
@@ -82,7 +79,7 @@ for file in firmware_files:
 # Scan .elf files with Nosey Parker
 for file in firmware_files:
     if file.endswith('.elf'):
-        elf_findings = run_nosey_parker(file, file)
+        elf_findings = run_np(file, file)
         all_results.append({
             "firmware": file,
             "type": "elf",
