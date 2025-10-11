@@ -1,4 +1,4 @@
-# Group Name: team-ftw-fw 
+# Group: team-ftw-fw 
 
 ## Team Members
 1. Andy Yothsackda
