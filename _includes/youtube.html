@@ -1,7 +1,24 @@
 <div class="embed-container">
-    <iframe width="640" height="390" 
-    src="https://www.youtube.com/embed/{{ include.id }}" 
-    frameborder="0" allowfullscreen></iframe>
+  {% if include.src %}
+    <iframe
+      title="{{ include.title | default: 'YouTube video' }}"
+      width="640" height="390"
+      src="{{ include.src }}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  {% elsif include.id %}
+    {% assign q = include.query | default: '' %}
+    <iframe
+      title="{{ include.title | default: 'YouTube video' }}"
+      width="640" height="390"
+      src="https://www.youtube.com/embed/{{ include.id }}{% if q != '' %}?{{ q }}{% endif %}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  {% else %}
+    <p>No YouTube video specified (pass either `src` or `id` to the include).</p>
+  {% endif %}
 </div>
 <style>
 .embed-container {
