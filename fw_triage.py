@@ -22,7 +22,7 @@ def run_np(target_path, firmware_name):
         if os.path.exists(np_ds):
             shutil.rmtree(np_ds)
         
-        print("Running nosey parker...")
+        print("Running noseyparker...")
         subprocess.run([np_exe, "scan", "--datastore", np_ds, target_path],
                        capture_output=True, text=True)
         
@@ -87,8 +87,8 @@ for file in firmware_files:
         })
 
 # Save combined results to findings.json with pretty-print
-with open("report/findings.json", "w") as f:
+with open("./findings.json", "w") as f:
     json.dump(all_results, f, indent=2)
 
-print(f"All findings: report/findings.json")
+print(f"All findings: ./findings.json")
 print(f".Bin Saved to: extracted/")
