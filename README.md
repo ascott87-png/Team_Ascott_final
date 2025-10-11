@@ -8,5 +8,4 @@ This repo is for the Midterm Project for COSC 6840. Below are the members who wo
 3. Jon Menzel
 
 ## Recording of Automated Script
-https://github.com/user-attachments/assets/093d8d88-e667-41a5-9672-73c5ad877c29
-
+https://github.com/user-attachments/assets/b780b4c5-5c56-4f0c-b7e8-c8bc2591c4b8
