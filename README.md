@@ -7,5 +7,5 @@ This repo is for the Midterm Project for COSC 6840. Below are the members that w
 2. Alyssa Scott
 3. Jon Menzel
 
-## Video of Automated Script
-![](docs/gifs/Script.gif)
+## Recording of Automated Script
+[![Recording of Script](https://youtu.be/H6LiRrOngAs)]
