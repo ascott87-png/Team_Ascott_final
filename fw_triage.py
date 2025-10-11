@@ -66,9 +66,9 @@ for file in firmware_files:
                     break
             
             if not squash_path:
-                bin_findings.append(f"Extracted to {output_folder} (no squashfs filesystem found)")
+                bin_findings.append(f"Extracted to {output_folder} but no squashfs-root found.")
         else:
-            bin_findings.append(f"No extractable content found")
+            bin_findings.append(f"No valid data found in {file}")
 
         all_results.append({
             "firmware": file,
