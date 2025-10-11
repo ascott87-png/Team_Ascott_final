@@ -8,5 +8,4 @@ This repo is for the Midterm Project for COSC 6840. Below are the members that w
 3. Jon Menzel
 
 ## Video of Automated Script
-
-
+![](docs/gifs/Script.gif)
