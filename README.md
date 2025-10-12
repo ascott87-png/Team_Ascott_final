@@ -1,6 +1,6 @@
 # team-ftw-fw 
 
-This repo is for the Midterm Project for COSC 6840. Below are the members who worked on the project.  
+This repo is for the Midterm Project for COSC 6840. Below are the members who worked on the project as well as a screen recording of our script. 
 
 ## Members
 1. Andy Yothsackda
