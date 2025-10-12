@@ -1,0 +1,16 @@
+#!/bin/ash
+
+DHCP_RESULT="/tmp/dhcptemp.log"
+
+dhcp_result()
+{
+cat > $DHCP_RESULT << EOM
+$1
+EOM
+}
+if [ "$1"='renew' ] || [ "$1"='bound' ] ; then
+    touch /tmp/dhcptemp.log
+    dhcp_result $ip
+fi
+echo $1
+echo $1:$ip >> /tmp/dhcptemp.debug

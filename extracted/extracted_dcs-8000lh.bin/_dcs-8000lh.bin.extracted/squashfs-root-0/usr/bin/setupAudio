@@ -1,0 +1,54 @@
+#!/bin/sh
+
+
+ShowUsage() {
+	echo "$0" [option] [value]
+	echo "[option list]:" 
+	echo " -i  [value] # set input Volume from 0 ~ 100"
+	echo " -o  [value] # set output Volume from 0 ~ 100"
+	echo " -im [value] # 1 input Mute, 0 input Unmute"
+	echo " -om [value] # 1 output Mute, 0 output Unmute"
+	echo " -h # Show this usage"
+	exit 1
+}
+
+inputVoulme() {
+	echo "Set input Volume : $value"
+}
+
+outputVolume() {
+	echo "Set output Volume : $value"
+}
+
+setIutputMute() {
+	echo "Set Input Mute : $value"
+}
+setOutputMute() {
+	echo "Set Output Mute : $value"
+}
+
+option=$1
+value=$2
+
+case $option in
+	-i)
+		inputVoulme
+		;;
+	-o)
+		outputVolume
+		;;
+	-im)
+		setIutputMute
+		;;
+	-om)
+		setOutputMute
+		;;
+	-h)
+		ShowUsage
+		;;
+	*)
+		ShowUsage
+		;;
+esac
+
+exit 0

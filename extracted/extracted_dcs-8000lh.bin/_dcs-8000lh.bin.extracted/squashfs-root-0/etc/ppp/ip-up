@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# When the ppp link comes up, this script is called with the following
+# parameters
+#		$1	the interface name used by pppd (e.g. ppp3)
+#		$2	the tty device name
+#		$3	the tty device speed
+#		$4	the local IP address for the interface
+#		$5	the remote IP address
+#		$6	the parameter specified by the 'ipparam' option to pppd
+
+RESOLV_CONF=/etc/resolv.conf
+DDNS_SCRIPT=/etc/rc.d/init.d/ddnsUpdater.sh
+OPT_SCRIPT=/opt/opt.local
+
+addBS() {
+	echo $1 | sed -re 's,\.,\\.,g'
+}
+
+addDNS() {
+	dns=$1
+	if [ "$dns" != "" ]; then
+		grep -q "nameserver *$(addBS $dns)" $RESOLV_CONF || echo "nameserver $dns" >> $RESOLV_CONF
+	fi
+}
+
+[ "$6" = "test" ] && exit 0
+[ "$USEPEERDNS" = "1" ] || exit 0
+mv $RESOLV_CONF /tmp/resolv.conf.bak
+addDNS $DNS1
+addDNS $DNS2
+cat /tmp/resolv.conf.bak >> $RESOLV_CONF
+rm -f /tmp/resolv.conf.bak
+/sbin/route del default
+/sbin/route add default gw "$5"
+route add default dev ppp0
+[ -x "$DDNS_SCRIPT" ] && $DDNS_SCRIPT reload
+[ -x "$OPT_SCRIPT" ] && { $OPT_SCRIPT stop; $OPT_SCRIPT start; }

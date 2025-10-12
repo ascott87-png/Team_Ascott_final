@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# log
+/etc/rc.d/init.d/logd.sh stop
+flash_erase /dev/mtd4 0 0
+flash_erase /dev/mtd6 0 0
+
+# tinydb
+/etc/rc.d/init.d/dbd.sh stop
+flash_erase /dev/mtd3 0 0
+flash_erase /dev/mtd5 0 0
+

@@ -1,0 +1,87 @@
+#!/bin/sh
+
+
+
+showUsage() {
+	echo "Usage:"
+	echo "light [power|active|wpsLed|ir] [on|off]"
+	echo "or"
+	echo "light [pow_r | pow_g | eth_r | eth_g |  wifi_r | wifi_g | camera | speakerAmp | led] [on|off]"
+	exit 1
+}
+
+target=$1
+action=$2
+end=$3
+
+[ $target ] || showUsage
+[ $action ] || showUsage
+[ $end ] && showUsage
+
+case $target in
+	out1)
+		{ [ $action = on ] && cmd=606; } || { [ $action = off ] && cmd=624; } || showUsage
+	;;
+        out2)
+                { [ $action = on ] && cmd=607; } || { [ $action = off ] && cmd=625; } || showUsage
+        ;;
+        out3)
+                { [ $action = on ] && cmd=608; } || { [ $action = off ] && cmd=626; } || showUsage
+        ;;
+        out4)
+                { [ $action = on ] && cmd=609; } || { [ $action = off ] && cmd=627; } || showUsage
+        ;;
+	led)
+		{ [ $action = on ] && cmd=695; } || { [ $action = off ] && cmd=696; } || showUsage
+	;;
+	power)
+		{ [ $action = on ] && cmd=602; } || { [ $action = off ] && cmd=603; } || showUsage
+	;;
+	active)
+		{ [ $action = on ] && cmd=604; } || { [ $action = off ] && cmd=605; } || showUsage
+	;;
+	wpsLed)
+		{ [ $action = on ] && cmd=632; } || { [ $action = off ] && cmd=633; } || showUsage
+	;;
+	ir)
+		{ [ $action = auto ] && cmd=649; } || { [ $action = on ] && cmd=650; } || { [ $action = off ] && cmd=651; } || { [ $action = autoPIR ] && cmd=652; } || showUsage
+	;;
+	lenspower)
+		{ [ $action = on ] && cmd=682; } || { [ $action = off ] && cmd=683; } || showUsage
+	;;
+	exAntenna)
+		{ [ $action = on ] && cmd=665; } || { [ $action = off ] && cmd=666; } || showUsage
+	;;
+	speakerAmp)
+		{ [ $action = on ] && cmd=690; } || { [ $action = off ] && cmd=691; } || showUsage
+	;;
+	nightled)
+		{ [ $action = on ] && cmd=693; } || { [ $action = off ] && cmd=694; } || showUsage
+	;;
+	pow_r)
+		{ [ $action = on ] && cmd=763; } || { [ $action = off ] && cmd=770; } || showUsage
+	;;
+	pow_g)
+		{ [ $action = on ] && cmd=776; } || { [ $action = off ] && cmd=769; } || showUsage
+	;;
+	eth_r)
+		{ [ $action = on ] && cmd=764; } || { [ $action = off ] && cmd=771; } || showUsage
+	;;
+	eth_g)
+		{ [ $action = on ] && cmd=765; } || { [ $action = off ] && cmd=772; } || showUsage
+	;;
+	wifi_r)
+		{ [ $action = on ] && cmd=767; } || { [ $action = off ] && cmd=774; } || showUsage
+	;;
+	wifi_g)
+		{ [ $action = on ] && cmd=766; } || { [ $action = off ] && cmd=773; } || showUsage
+	;;
+	camera)
+		{ [ $action = on ] && cmd=768; } || { [ $action = off ] && cmd=775; } || showUsage
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+send_cmd watchdog $cmd > /dev/null 2> /dev/null

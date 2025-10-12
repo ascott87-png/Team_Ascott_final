@@ -1,0 +1,1646 @@
+<?xml version="1.0"?>
+<data>
+<Meta>
+<Version type="3" content="" />
+<ETag type="4" content="635f1a123b3b9b7f19e9ab72548bf717" />
+</Meta>
+<System>
+<Version type="3" content="1.0.0-1007" />
+<OEMVersion type="3" content="1.00" />
+<OEMBuild type="3" content="05" />
+<Vendor type="4" content="Alphanetworks" />
+<VendorUrl type="4" content="" />
+<OEM type="4" content="D-Link" />
+<OEMUrl type="4" content="http://www.dlink.com/" />
+<Model type="3" content="DCS-8000LH" />
+<ModelUrl type="4" content="http://www.dlink.com/" />
+<ProdName type="4" content="Internet Camera" />
+<ProdNumber type="3" content="DCS-8000LH" />
+<ModelW type="3" content="DCS-8000LH" />
+<ModelUrlW type="4" content="http://www.dlink.com/" />
+<ProdNameW type="4" content="Wireless Internet Camera" />
+<ProdNumberW type="3" content="DCS-8000LH" />
+<ProdDesc type="4" content="Advenced IP Camera" />
+<ProdType type="1" content="0" />
+<IRCode type="2" content="2279" />
+<MergeFlag type="1" content="1" />
+<SettingsKey type="3" content="fa10cd9b7db.xl.e" />
+<URN type="3" content="" />
+</System>
+<Host>
+<CameraName type="5" content="" />
+<Location type="4" content="" />
+</Host>
+<NTPClient>
+<Enable type="1" content="1" />
+<DHCPNTPEnable type="1" content="1" />
+<Retry type="1" content="0" />
+<Server type="4" content="ntp1.dlink.com" />
+</NTPClient>
+<TMP>
+<DataParam type="3" content="010100001980.00" />
+<WorkRulerMask type="2" content="0" />
+<_FWCreateDate type="5" content="" />
+<_FWCreateIP type="5" content="" />
+<_FWCreateName type="5" content="" />
+</TMP>
+<DirectView>
+<DirectAuth type="1" content="1" />
+</DirectView>
+<HTTPServer>
+<Enable type="1" content="1" />
+<WebAccess2 type="1" content="1"/>
+<CSRFEnable type="1" content="1" />
+<Port type="2" content="80" />
+<HTTPSPort type="2" content="443" />
+<SSLEnable type="1" content="0" />
+<SSLOnly type="1" content="0" />
+</HTTPServer>
+<Network>
+<DHCPEnable type="1" content="1" />
+<Address type="3" content="192.168.0.20" />
+<Netmask type="3" content="255.255.255.0" />
+<Gateway type="3" content="192.168.0.1" />
+<DNS1 type="3" content="" />
+<DNS2 type="3" content="" />
+<LinkLocalIP type="1" content="1" />
+<DHCPIPEnable type="1" content="1" />
+<DHCPDNSEnable type="1" content="1" />
+<SearchDomain type="4" content="" />
+<AutoIPEnable type="1" content="1" />
+<RootIP type="3" content="10.255.255.1" />
+<RootNetmask type="3" content="255.255.255.0" />
+<RootGateway type="3" content="10.255.255.1" />
+<LeaseStart type="3" content="10.255.255.10" />
+<LeaseEnd type="3" content="10.255.255.254" />
+<LeaseSubnet type="3" content="255.255.255.0" />
+<ETHERNET_DEV type="4" content="eth0" />
+</Network>
+<PPPoE>
+<Enable type="1" content="0" />
+<User type="4" content="" />
+<Password type="4" content="" />
+</PPPoE>
+<IPv6>
+<Enable type="1" content="0" />
+<AutoIP type="1" content="1" />
+<ManualIP type="1" content="0" />
+<Address type="3" content="" />
+<Prefix type="1" content="64" />
+<Gateway type="3" content="" />
+<PrimaryDNS type="3" content="" />
+<SecondDNS type="3" content="" />
+</IPv6>
+<DDNS>
+<Enable type="1" content="0" />
+<Provider type="4" content="" />
+<Providers type="4" content="dyndns" />
+<User type="4" content="" />
+<Password type="4" content="" />
+<UserHost type="4" content="" />
+<Timeout type="2" content="576" />
+</DDNS>
+<UPnP>
+<Enable type="1" content="1" />
+<PortForward type="1" content="0" />
+<HTTPExtPort type="2" content="80" />
+<HTTPSExtPort type="2" content="443" />
+<RTSPExtPort type="2" content="554" />
+</UPnP>
+<Wireless>
+<Enable type="1" content="1" />
+<Mode type="1" content="0" />
+<ExtendMode type="1" content="0" />
+<ESSID type="4" content="default" />
+<BSSID type="4" content="00:00:00:00:00:00" />
+<Channel type="2" content="6" />
+<TXRate type="1" content="12" />
+<AuthMode type="1" content="0" />
+<SecMethod type="1" content="0" />
+<KeyFormat type="1" content="0" />
+<KeyLength type="1" content="0" />
+<Key type="5" content="" />
+<WepKeyIndex type="1" content="1" />
+<extAntenna type="1" content="0" />
+<AP_SSID type="4" content="default" />
+<AP_PW type="5" content="qwer1234" />
+<AP_CH type="2" content="11" />
+<AP_Enable type="1" content="0" />
+<AP_AuthMode type="1" content="2" />
+<AP_SecMethod type="1" content="3"/>
+<RepeatRename type="1" content="1" />
+<RepeatSSID type="4" content="default" />
+<RepeatUserNum type="2" content="6" />
+<hadConnect type="1" content="0" />
+<STA_DEV type="4" content="wlan0" />
+</Wireless>
+<HTTPAccount>
+<_MaxAdmin type="1" content="3" />
+<AdminSize type="1" content="1" />
+<AdminUser type="3" content="admin" />
+<_DefAdmUser type="3" content="admin" />
+<AdminPasswd type="3" content="" />
+<_DefAdmPwd type="3" content="" />
+<AdminID type="4" content="0" />
+<_MaxUsers type="1" content="20" />
+<AdminUser2 type="3" content="" />
+<AdminID2 type="4" content=""/>
+<AdminPasswd2 type="3" content="" />
+<AdminUser3 type="3" content="" />
+<AdminID3 type="4" content=""/>
+<AdminPasswd3 type="3" content="" />
+<UserSize type="1" content="0" />
+<LiveAuth type="1" content="1" />
+<_MaxOperators type="1" content="5" />
+<OperatorSize type="1" content="0" />
+<SnapAuth type="1" content="1" />
+<Operator1 type="3" content="" />
+<OperatorPwd1 type="3" content="" />
+<Operator2 type="3" content="" />
+<OperatorPwd2 type="3" content="" />
+<Operator3 type="3" content="" />
+<OperatorPwd3 type="3" content="" />
+<Operator4 type="3" content="" />
+<OperatorPwd4 type="3" content="" />
+<Operator5 type="3" content="" />
+<OperatorPwd5 type="3" content="" />
+<User1 type="3" content="" />
+<ID1 type="4" content="" />
+<Password1 type="3" content="" />
+<User2 type="3" content="" />
+<ID2 type="4" content="" />
+<Password2 type="3" content="" />
+<User3 type="3" content="" />
+<ID3 type="4" content="" />
+<Password3 type="3" content="" />
+<User4 type="3" content="" />
+<ID4 type="4" content="" />
+<Password4 type="3" content="" />
+<User5 type="3" content="" />
+<ID5 type="4" content="" />
+<Password5 type="3" content="" />
+<User6 type="3" content="" />
+<ID6 type="4" content="" />
+<Password6 type="3" content="" />
+<User7 type="3" content="" />
+<ID7 type="4" content="" />
+<Password7 type="3" content="" />
+<User8 type="3" content="" />
+<ID8 type="4" content="" />
+<Password8 type="3" content="" />
+<User9 type="3" content="" />
+<ID9 type="4" content="" />
+<Password9 type="3" content="" />
+<User10 type="3" content="" />
+<ID10 type="4" content="" />
+<Password10 type="3" content="" />
+<User11 type="3" content="" />
+<ID11 type="4" content="" />
+<Password11 type="3" content="" />
+<User12 type="3" content="" />
+<ID12 type="4" content="" />
+<Password12 type="3" content="" />
+<User13 type="3" content="" />
+<ID13 type="4" content="" />
+<Password13 type="3" content="" />
+<User14 type="3" content="" />
+<ID14 type="4" content="" />
+<Password14 type="3" content="" />
+<User15 type="3" content="" />
+<ID15 type="4" content="" />
+<Password15 type="3" content="" />
+<User16 type="3" content="" />
+<ID16 type="4" content="" />
+<Password16 type="3" content="" />
+<User17 type="3" content="" />
+<ID17 type="4" content="" />
+<Password17 type="3" content="" />
+<User18 type="3" content="" />
+<ID18 type="4" content="" />
+<Password18 type="3" content="" />
+<User19 type="3" content="" />
+<ID19 type="4" content="" />
+<Password19 type="3" content="" />
+<User20 type="3" content="" />
+<ID20 type="4" content="" />
+<Password20 type="3" content="" />
+</HTTPAccount>
+<Log>
+<SyncTime type="3" content="*:*/10" />
+</Log>
+<ActorSnapshot>
+<Enable type="1" content="0" />
+<SnapType type="1" content="0" />
+<Prerecord type="2" content="5" />
+<Postrecord type="2" content="5" />
+<SixIntervalmSec type="2" content="1000" />
+</ActorSnapshot>
+<ActorVideoclip>
+<Enable type="1" content="0" />
+<ProfileID type="1" content="2" />
+<FileType type="1" content="0" />
+<Prerecord type="2" content="5" />
+<MaxDuration type="2" content="10" />
+</ActorVideoclip>
+<ActorClSn>
+<Enable type="1" content="0" />
+<ProfileID type="1" content="2" />
+<FileType type="1" content="0" />
+<ToFTP type="1" content="1" />
+<Prerecord type="2" content="5" />
+<Postrecord type="2" content="10" />
+</ActorClSn>
+<ActorRecording>
+<Enable type="1" content="0" />
+<ProfileID type="1" content="2" />
+<FileType type="1" content="0" />
+<Prerecord type="2" content="5" />
+<Postrecord type="2" content="5" />
+<MaxDuration type="2" content="60" />
+<EnableShot type="1" content="1" />
+</ActorRecording>
+<ActorContShot>
+<Enable type="1" content="0" />
+<SnapType type="1" content="0" />
+<Prerecord type="2" content="5" />
+<Postrecord type="2" content="5" />
+<SixIntervalmSec type="2" content="1000" />
+</ActorContShot>
+<ActorFR>
+<Enable type="1" content="0" />
+<TimeofSnapshot type="1" content="3" />
+<RegionPercent type="1" content="2" />
+<FREnable type="1" content="0" />
+<HDEnable type="1" content="1" />
+</ActorFR>
+<ActorASR>
+<Enable type="1" content="0" />
+</ActorASR>
+<TargetCShotSD>
+<TargetType type="3" content="SD" />
+<IntervalSec type="2" content="60" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+</TargetCShotSD>
+<TargetClipSD>
+<TargetType type="3" content="SD" />
+<IntervalSec type="2" content="60" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+</TargetClipSD>
+<TargetRecSD>
+<TargetType type="3" content="SD" />
+<IntervalSec type="2" content="0" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+</TargetRecSD>
+<TargetSnapFTP>
+<TargetType type="3" content="FTP" />
+<IntervalSec type="2" content="300" />
+<Server type="4" content="" />
+<Port type="2" content="21" />
+<Path type="4" content="" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Passive type="1" content="1" />
+<Prefix type="3" content="" />
+<Authenticate type="1" content="0" />
+</TargetSnapFTP>
+<TargetFR>
+<TargetType type="3" content="OMRON" />
+<Confidence type="2" content="40" />
+<Threshold type="2" content="1" />
+<MegviiApiKey type="3" content="" />
+<MegviiApiSecret type="3" content="" />
+</TargetFR>
+<TargetASR>
+<TargetType type="3" content="CYBERON" />
+</TargetASR>
+<TargetClipFTP>
+<TargetType type="3" content="FTP" />
+<IntervalSec type="2" content="300" />
+<Server type="4" content="" />
+<Port type="2" content="21" />
+<Path type="4" content="" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Passive type="1" content="1" />
+<Prefix type="3" content="" />
+<Authenticate type="1" content="0" />
+</TargetClipFTP>
+<TargetClSnFTP>
+<TargetType type="3" content="FTP" />
+<IntervalSec type="2" content="300" />
+<Server type="4" content="" />
+<Port type="2" content="21" />
+<Path type="4" content="" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Passive type="1" content="1" />
+<Prefix type="3" content="" />
+<Authenticate type="1" content="0" />
+</TargetClSnFTP>
+<TargetClSnSFTP>
+<TargetType type="3" content="SFTP" />
+<IntervalSec type="2" content="300" />
+<Server type="4" content="" />
+<Port type="2" content="22" />
+<Path type="4" content="" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Passive type="1" content="1" />
+<Prefix type="3" content="" />
+<Authenticate type="1" content="0" />
+</TargetClSnSFTP>
+<TargetRecSam>
+<TargetType type="3" content="Samba" />
+<IntervalSec type="2" content="0" />
+<AccountType type="1" content="0" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Server type="3" content="" />
+<ShareFolder type="3" content="" />
+<SubFolder type="3" content="" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+</TargetRecSam>
+<TargetCShotSam>
+<TargetType type="3" content="Samba" />
+<IntervalSec type="2" content="0" />
+<AccountType type="1" content="0" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Server type="3" content="" />
+<ShareFolder type="3" content="" />
+<SubFolder type="3" content="" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+</TargetCShotSam>
+<TargetNONE>
+<TargetType type="3" content="NONE" />
+</TargetNONE>
+<Event>
+<Event01 type="3" content="motion,None" />
+<Event02 type="3" content="storage_full,None" />
+<Event03 type="3" content="storage_failure,None" />
+<Event04 type="3" content="network_failure,None" />
+<Event05 type="3" content="gp_input1,None" />
+<Event06 type="3" content="gp_input2,None" />
+<Event07 type="3" content="gp_input3,None" />
+<Event08 type="3" content="gp_input4,None" />
+<Event09 type="3" content="" />
+<Event10 type="3" content="" />
+<Handler01 type="3" content="" />
+<Handler02 type="3" content="libeh_record.so" />
+<Handler03 type="3" content="libeh_shotd.so" />
+<Handler04 type="3" content="libeh_gp_output1.so" />
+<Handler05 type="3" content="" />
+<Handler06 type="3" content="" />
+<Handler07 type="3" content="" />
+<Handler08 type="3" content="" />
+<Handler09 type="3" content="" />
+<Handler10 type="3" content="" />
+</Event>
+<Privatemask>
+<Enable type="1" content="0" />
+<dot_x1 type="2" content="0" />
+<dot_y1 type="2" content="0" />
+<mask_width1 type="2" content="0" />
+<mask_height1 type="2" content="0" />
+<dot_x2 type="2" content="0" />
+<dot_y2 type="2" content="0" />
+<mask_width2 type="2" content="0" />
+<mask_height2 type="2" content="0" />
+<dot_x3 type="2" content="0" />
+<dot_y3 type="2" content="0" />
+<mask_width3 type="2" content="0" />
+<mask_height3 type="2" content="0" />
+</Privatemask>
+<GPIO>
+<PIR type="1" content="0" />
+<IN1 type="1" content="1" />
+<IN2 type="1" content="1" />
+<IN3 type="1" content="1" />
+<IN4 type="1" content="1" />
+<OUT1 type="1" content="0" />
+<OUT2 type="1" content="0" />
+<OUT3 type="1" content="0" />
+<OUT4 type="1" content="0" />
+<SilentLED type="1" content="0" />
+</GPIO>
+<Bonjour>
+<Enable type="1" content="1" />
+</Bonjour>
+<TargetSD>
+<UserMountSD type="1" content="1" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+<SnapInterval type="2" content="60" />
+<VClipInterval type="2" content="60" />
+<RecInterval type="2" content="0" />
+</TargetSD>
+<TargetSamba>
+<AccountType type="1" content="0" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Server type="3" content="" />
+<ShareFolder type="3" content="DCS-8000LH" />
+<SubFolder type="3" content="" />
+<KeepSpace type="2" content="200" />
+<Recycle type="1" content="1" />
+</TargetSamba>
+<FTPClient1>
+<Server type="4" content="" />
+<Port type="2" content="21" />
+<Path type="4" content="" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Passive type="1" content="1" />
+<Prefix type="3" content="" />
+<Interval type="2" content="300" />
+<Authenticate type="1" content="0" />
+</FTPClient1>
+<FTPClient2>
+<Server type="4" content="" />
+<Port type="2" content="21" />
+<Path type="4" content="" />
+<User type="3" content="" />
+<Password type="3" content="" />
+<Passive type="1" content="1" />
+<Prefix type="3" content="" />
+<Interval type="2" content="300" />
+<Authenticate type="1" content="0" />
+</FTPClient2>
+<AdmMail>
+<Enable type="1" content="0" />
+<SDFullEvent type="1" content="" />
+<SDFailEvent type="1" content="" />
+<Server type="4" content="" />
+<Port type="2" content="25" />
+<SMTPEncrypt type="1" content="0" />
+<User type="4" content="" />
+<Password type="4" content="" />
+<From type="4" content="" />
+<To type="5" content="" />
+<Mul_To type="5" content="" />
+<Interval type="2" content="600" />
+</AdmMail>
+<BurnIn>
+<BurnInEnable type="1" content="0" />
+<BurnInWMins type="2" content="0"/>
+<BurnResult type="5" content="No BurnIN"/>
+</BurnIn>
+<Migrate>
+<BeMigrated type="1" content="0" />
+</Migrate>
+<TV_OUT>
+<Enable type="1" content="0" />
+<OutputType type="1" content="0" />
+</TV_OUT>
+<Firewall>
+<Enable type="1" content="0" />
+<Action type="1" content="0" />
+<ActionSet type="5" content="" />
+<ActionDeny type="5" content="" />
+<Action6Set type="5" content="" />
+<Action6Deny type="5" content="" />
+<MacSet type="5" content="" />
+<MacDeny type="5" content="" />
+<AdminAllowOn type="1" content="0" />
+<AdminAllowAddr type="3" content="" />
+</Firewall>
+<OVProfile00>
+<Fixed type="1" content="0" />
+<Enable type="1" content="1" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="OVProfile00" />
+<Token type="5" content="OVProfile00" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="VSCfg00" />
+<VideoEncoderToken type="5" content="VECfg00" />
+<AudioSourceToken type="5" content="ASCfg00" />
+<AudioEncoderToken type="5" content="AECfg00" />
+<StreamURI type="5" content="OVProfile00" />
+</OVProfile00>
+<OVProfile01>
+<Fixed type="1" content="0" />
+<Enable type="1" content="1" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="OVProfile01" />
+<Token type="5" content="OVProfile01" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="VSCfg00" />
+<VideoEncoderToken type="5" content="VECfg01" />
+<AudioSourceToken type="5" content="ASCfg00" />
+<AudioEncoderToken type="5" content="AECfg01" />
+<StreamURI type="5" content="OVProfile01" />
+</OVProfile01>
+<OVProfile02>
+<Fixed type="1" content="0" />
+<Enable type="1" content="1" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="OVProfile02" />
+<Token type="5" content="OVProfile02" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="MDCfg02" />
+<VideoSourceToken type="5" content="VSCfg00" />
+<VideoEncoderToken type="5" content="VECfg02" />
+<AudioSourceToken type="5" content="ASCfg00" />
+<AudioEncoderToken type="5" content="AECfg02" />
+<StreamURI type="5" content="OVProfile02" />
+</OVProfile02>
+<OVProfile03>
+<Fixed type="1" content="0" />
+<Enable type="1" content="0" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="" />
+<Token type="5" content="" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="" />
+<VideoEncoderToken type="5" content="" />
+<AudioSourceToken type="5" content="" />
+<AudioEncoderToken type="5" content="" />
+<StreamURI type="5" content="OVProfile03" />
+</OVProfile03>
+<_OVProfile00>
+<Fixed type="1" content="0" />
+<Enable type="1" content="1" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="OVProfile00" />
+<Token type="5" content="" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="VSCfg00" />
+<VideoEncoderToken type="5" content="VECfg00" />
+<AudioSourceToken type="5" content="ASCfg00" />
+<AudioEncoderToken type="5" content="AECfg00" />
+<StreamURI type="5" content="OVProfile00" />
+</_OVProfile00>
+<_OVProfile01>
+<Fixed type="1" content="0" />
+<Enable type="1" content="1" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="OVProfile01" />
+<Token type="5" content="" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="VSCfg00" />
+<VideoEncoderToken type="5" content="VECfg01" />
+<AudioSourceToken type="5" content="ASCfg00" />
+<AudioEncoderToken type="5" content="AECfg00" />
+<StreamURI type="5" content="OVProfile01" />
+</_OVProfile01>
+<_OVProfile02>
+<Fixed type="1" content="0" />
+<Enable type="1" content="1" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="" />
+<Token type="5" content="" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="" />
+<VideoEncoderToken type="5" content="" />
+<AudioSourceToken type="5" content="" />
+<AudioEncoderToken type="5" content="" />
+<StreamURI type="5" content="OVProfile02" />
+</_OVProfile02>
+<_OVProfile03>
+<Fixed type="1" content="0" />
+<Enable type="1" content="0" />
+<MultiEnable type="1" content="0" />
+<Name type="5" content="" />
+<Token type="5" content="" />
+<PTZToken  type="5" content="" />
+<MetadataToken  type="5" content="" />
+<VideoSourceToken type="5" content="" />
+<VideoEncoderToken type="5" content="" />
+<AudioSourceToken type="5" content="" />
+<AudioEncoderToken type="5" content="" />
+<StreamURI type="5" content="OVProfile03" />
+</_OVProfile03>
+<VSCfg00>
+<Token type="5" content="VSCfg00" />
+<Name type="5" content="VSCfg00" />
+</VSCfg00>
+<VECfg00>
+<Token type="5" content="VECfg00" />
+<Name type="5" content="VECfg00" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</VECfg00>
+<VECfg01>
+<Token type="5" content="VECfg01" />
+<Name type="5" content="VECfg01" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</VECfg01>
+<VECfg02>
+<Token type="5" content="VECfg02" />
+<Name type="5" content="VECfg02" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</VECfg02>
+<VECfg03>
+<Token type="5" content="VECfg03" />
+<Name type="5" content="VECfg03" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</VECfg03>
+<ASCfg00>
+<Token type="5" content="ASCfg00" />
+<Name type="5" content="ASCfg00" />
+</ASCfg00>
+<AECfg00>
+<Token type="5" content="AECfg00" />
+<Name type="5" content="AECfg00" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</AECfg00>
+<AECfg01>
+<Token type="5" content="AECfg01" />
+<Name type="5" content="AECfg01" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</AECfg01>
+<AECfg02>
+<Token type="5" content="AECfg02" />
+<Name type="5" content="AECfg02" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</AECfg02>
+<AECfg03>
+<Token type="5" content="AECfg03" />
+<Name type="5" content="AECfg03" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+</AECfg03>
+<Scopes>
+<Name type="5" content="" />
+<Location type="5" content="" />
+<Scope00 type="5" content="" />
+<Scope01 type="5" content="" />
+<Scope02 type="5" content="" />
+<Scope03 type="5" content="" />
+</Scopes>
+<Discovery>
+<Enable type="1" content="1" />
+</Discovery>
+<RelayOutput00>
+<token type="3" content="RelayOutput00" />
+<Mode type="1" content="1" />
+<DelayTime type="2" content="0" />
+<IdleState type="1" content="0" />
+</RelayOutput00>
+<PTZCfg00>
+<Token type="5" content="PTZCfg00" />
+<Name type="5" content="PTZCfg00" />
+<Timeout type="1" content="15" />
+</PTZCfg00>
+<MDCfg00>
+<Token type="5" content="MDCfg00" />
+<Name type="5" content="MDCfg00" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+<SessionTimeout type="2" content="0" />
+<MetadataEvent type="5" content="" />
+</MDCfg00>
+<MDCfg01>
+<Token type="5" content="MDCfg01" />
+<Name type="5" content="MDCfg01" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+<SessionTimeout type="2" content="0" />
+<MetadataEvent type="5" content="" />
+</MDCfg01>
+<MDCfg02>
+<Token type="5" content="MDCfg02" />
+<Name type="5" content="MDCfg02" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+<SessionTimeout type="2" content="0" />
+<MetadataEvent type="5" content="" />
+</MDCfg02>
+<MDCfg03>
+<Token type="5" content="MDCfg03" />
+<Name type="5" content="MDCfg03" />
+<MultiIPType type="3" content="IPv4" />
+<MultiIPv4 type="3" content="0.0.0.0" />
+<MultiIPv6 type="3" content="" />
+<MultiPort type="2" content="0" />
+<MultiTTL type="2" content="0" />
+<MultiAutoStart type="1" content="0" />
+<SessionTimeout type="2" content="0" />
+<MetadataEvent type="5" content="" />
+</MDCfg03>
+<Notify00>
+<Status type="1" content="0" />
+</Notify00>
+<Notify01>
+<Status type="1" content="0" />
+</Notify01>
+<Notify02>
+<Status type="1" content="0" />
+</Notify02>
+<Notify03>
+<Status type="1" content="0" />
+</Notify03>
+<Notify04>
+<Status type="1" content="0" />
+</Notify04>
+<Notify05>
+<Status type="1" content="0" />
+</Notify05>
+<Notify06>
+<Status type="1" content="0" />
+</Notify06>
+<Notify07>
+<Status type="1" content="0" />
+</Notify07>
+<Notify08>
+<Status type="1" content="0" />
+</Notify08>
+<Notify09>
+<Status type="1" content="0" />
+</Notify09>
+<PullMessage00>
+<Status type="1" content="0" />
+</PullMessage00>
+<PullMessage01>
+<Status type="1" content="0" />
+</PullMessage01>
+<PullMessage02>
+<Status type="1" content="0" />
+</PullMessage02>
+<PullMessage03>
+<Status type="1" content="0" />
+</PullMessage03>
+<PullMessage04>
+<Status type="1" content="0" />
+</PullMessage04>
+<PullMessage05>
+<Status type="1" content="0" />
+</PullMessage05>
+<PullMessage06>
+<Status type="1" content="0" />
+</PullMessage06>
+<PullMessage07>
+<Status type="1" content="0" />
+</PullMessage07>
+<PullMessage08>
+<Status type="1" content="0" />
+</PullMessage08>
+<PullMessage09>
+<Status type="1" content="0" />
+</PullMessage09>
+<EPTZSetting>
+<DefaultHome1 type="4" content="0,0,0,40" />
+<SetAsHome1 type="4" content="0,0,0,40" />
+<DefaultHome2 type="4" content="0,0,0,40" />
+<SetAsHome2 type="4" content="0,0,0,40" />
+<DefaultHome3 type="4" content="0,0,0,40" />
+<SetAsHome3 type="4" content="0,0,0,40" />
+<DefaultHome4 type="4" content="0,0,0,40" />
+<SetAsHome4 type="4" content="0,0,0,40" />
+<DefaultHome5 type="4" content="0,0,0,40" />
+<SetAsHome5 type="4" content="0,0,0,40" />
+</EPTZSetting>
+<AudioInput>              
+<Enable type="1" content="1" />
+</AudioInput>
+<VideoChannel00>
+<IsLive type="1" content="1" />
+<ChannelID type="3" content="0" />
+<Enable type="1" content="1" />
+<UnicastEnable type="1" content="1" />
+<MulticastEnable type="1" content="0" />
+</VideoChannel00>
+<VideoChannel01>
+<IsLive type="1" content="1" />
+<ChannelID type="3" content="1" />
+<Enable type="1" content="1" />
+<UnicastEnable type="1" content="1" />
+<MulticastEnable type="1" content="0" />
+</VideoChannel01>
+<VideoChannel02>
+<IsLive type="1" content="1" />
+<ChannelID type="3" content="2" />
+<Enable type="1" content="1" />
+<UnicastEnable type="1" content="1" />
+<MulticastEnable type="1" content="0" />
+</VideoChannel02>
+<VideoChannel03>
+<IsLive type="1" content="0" />
+<ChannelID type="3" content="3" />
+<Enable type="1" content="0" />
+<UnicastEnable type="1" content="1" />
+<MulticastEnable type="1" content="0" />
+</VideoChannel03>
+<WirelessReport>
+<RefreshInterval type="2" content="60" />
+<Aggressive type="1" content="1" />
+</WirelessReport>
+<TunnelTimers>
+<MinWait type="2" content="0" />
+<MaxWait type="2" content="5000" />
+<StepsizeWait type="2" content="500" />
+<Retries type="2" content="10" />
+<MaxReadyWait type="2" content="60000" />
+</TunnelTimers>
+<UploadTimers>
+<MinWait type="2" content="1000" />
+<MaxWait type="2" content="5000" />
+<StepsizeWait type="2" content="500" />
+<Retries type="2" content="5" />
+<UploadTimeout type="2" content="1800000" />
+</UploadTimers>
+<XmppTimers>
+<MinWait type="2" content="5" />
+<MaxWait type="2" content="50" />
+<StepsizeWait type="2" content="1" />
+<Retries type="2" content="5" />
+</XmppTimers>
+<HistoryConfig>
+<CommandSize type="2" content="10" />
+<NotificationSize type="2" content="10" />
+</HistoryConfig>
+<HostServerPoll>
+<Enabled type="1" content="0" />
+<DefaultLinger type="2" content="600" />
+</HostServerPoll>
+<AudioChannels>
+<AudioMode type="3" content="listenonly" />
+<MicrophoneSource  type="3" content="internal" />
+</AudioChannels>
+<LoggingInfo>
+<Severity type="3" content="Informational" />
+<MaxEntries type="2" content="0" />
+<XMPPEnable type="1" content="0" />
+<XMPPUrl type="3" content="" />
+<HTTPSEnable type="1" content="0" />
+<HTTPSUrl type="3" content="" />
+<PollEnable type="1" content="0" />
+<PollUrl type="3" content="" />
+</LoggingInfo>
+<CameraMode>
+<Mode type="1" content="0" />
+<PrivacyButton  type="1" content="1" />
+<PreMode type="1" content="0" />
+</CameraMode>
+<NightMode>
+<IrNight type="1" content="0"/>
+<StateNight type="1" content="1"/>
+</NightMode>
+<TwoWayTalk>
+<LedMode type="1" content="0"/>
+<LedColor type="1" content="0"/>
+<LedPeriod type="2" content="1"/>
+</TwoWayTalk>
+<StandbyLed2>
+<Enable type="1" content="1"/>
+<DayColor type="1" content="0"/>
+<DayBrightness type="2" content="100"/>
+<NightColor type="1" content="0"/>
+<NightBrightness type="2" content="2"/>
+</StandbyLed2>
+<StateMachine>
+<SetAPCLI type="1" content="0"/>
+</StateMachine>
+<SecureFW>
+<Enable type="1" content="1" />
+<_TrustLevel type="1" content="1" />
+<StaticTL type="1" content="1" />
+</SecureFW>
+<TargetSnapSMTP>
+<TargetType type="3" content="SMTP" />
+<IntervalSec type="2" content="600" />
+<Server type="4" content="" />
+<Port type="2" content="25" />
+<Authenticate type="1" content="1" />
+<User type="4" content="" />
+<Password type="4" content="" />
+<From type="4" content="" />
+<To type="5" content="" />
+</TargetSnapSMTP>
+<TargetClipSMTP>
+<TargetType type="3" content="SMTP" />
+<IntervalSec type="2" content="600" />
+<Server type="4" content="" />
+<Port type="2" content="25" />
+<Authenticate type="1" content="1" />
+<User type="4" content="" />
+<Password type="4" content="" />
+<From type="4" content="" />
+<To type="5" content="" />
+</TargetClipSMTP>
+<SMTPClient1>
+<Server type="4" content="" />
+<Port type="2" content="25" />
+<Authenticate type="1" content="1" />
+<User type="4" content="" />
+<Password type="4" content="" />
+<From type="4" content="" />
+<To type="5" content="" />
+<Mul_To type="5" content="" />
+<Interval type="2" content="600" />
+</SMTPClient1>
+<SMTPClient2>
+<Server type="4" content="" />
+<Port type="2" content="25" />
+<Authenticate type="1" content="1" />
+<User type="4" content="" />
+<Password type="4" content="" />
+<From type="4" content="" />
+<To type="5" content="" />
+<Mul_To type="5" content="" />
+<Interval type="2" content="600" />
+</SMTPClient2>
+<HTTPS>
+<Enable type="1" content="1"/>
+<_Country type="3" content="TW"/>
+<_Province type="5" content="Asia"/>
+<_Locality type="5" content="Asia"/>
+<_Org type="5" content="D-Link Corporation"/>
+<_Org_u type="5" content="D-Link Corporation"/>
+<_CommonName type="5" content="www.dlink.com"/>
+<_Validity type="2" content="3650"/>
+<_KeyLength type="2" content="2048"/>
+</HTTPS>
+<Certificate2>
+<Method type="1" content="0"/>
+<PemExist type="1" content="0"/>
+<Country type="3" content="TW"/>
+<Province type="5" content="Asia"/>
+<Locality type="5" content="Asia"/>
+<Org type="5" content="D-Link Corporation"/>
+<Org_u type="5" content="D-Link Corporation"/>
+<CommonName type="5" content="www.dlink.com"/>
+<Validity type="2" content="3650"/>
+<KeyLength type="2" content="2048"/>
+</Certificate2>
+<CertificateReq>
+<Country type="3" content="TW"/>
+<Province type="5" content="Asia"/>
+<Locality type="5" content="Asia"/>
+<Org type="5" content="D-Link Corporation"/>
+<Org_u type="5" content="D-Link Corporation"/>
+<CommonName type="5" content="www.dlink.com"/>
+<Validity type="2" content="3650"/>
+<KeyLength type="2" content="2048"/>
+</CertificateReq>
+<HTTPSPem>
+<keyData type="5" content=""/>
+<csrData type="5" content=""/>
+<crtData type="5" content=""/>
+<pemData type="5" content=""/>
+<pemData2 type="5" content=""/>
+</HTTPSPem>
+<TimeZone>
+<Index type="1" content="1" />
+<AutoTZ type="1" content="1" />
+<STDCode type="3" content="" />
+<STDOffset type="3" content="" />
+<EnableDST type="1" content="1" />
+<DSTCode type="3" content="" />
+<AutoDST type="1" content="1" />
+<Offset type="3" content="1:00" />
+<StartTime type="3" content="M3.2.0/2:00:00" />
+<EndTime type="3" content="M11.1.0/2:00:00" />
+<EnableIANA type="1" content="0" />
+<OlsonID type="4" content="" />
+<POSIXTZ type="4" content="" />
+</TimeZone>
+<Profile1>
+<Enable type="1" content="1" />
+<Codec type="1" content="2" />
+<Scale type="1" content="4" />
+<FPS type="1" content="30" />
+<IPRatio type="1" content="10" />
+<EncodeMethod type="1" content="1" />
+<Bitrate type="2" content="1024" />
+<Quality type="1" content="2" />
+<MaxBitrate type="2" content="4096" />
+<MinBitrate type="2" content="4096" />
+<AudioEnable type="1" content="1" />
+<AudioCodec type="1" content="2" />
+<AudioChannel type="1" content="1" />
+<AudioSampleRate type="2" content="16000" />
+</Profile1>
+<Profile2>
+<Enable type="1" content="0" />
+<Codec type="1" content="2" />
+<Scale type="1" content="4" />
+<FPS type="1" content="15" />
+<IPRatio type="1" content="10" />
+<EncodeMethod type="1" content="1" />
+<Bitrate type="2" content="512" />
+<Quality type="1" content="1" />
+<MaxBitrate type="2" content="768" />
+<MinBitrate type="2" content="768" />
+<AudioEnable type="1" content="1" />
+<AudioCodec type="1" content="2" />
+<AudioChannel type="1" content="1" />
+<AudioSampleRate type="2" content="16000" />
+</Profile2>
+<Profile3>
+<Enable type="1" content="0" />
+<Codec type="1" content="0" />
+<Scale type="1" content="4" />
+<FPS type="1" content="5" />
+<IPRatio type="1" content="5" />
+<EncodeMethod type="1" content="1" />
+<Bitrate type="2" content="256" />
+<Quality type="1" content="2" />
+<MaxBitrate type="2" content="768" />
+<MinBitrate type="2" content="768" />
+<AudioEnable type="1" content="1" />
+<AudioCodec type="1" content="0" />
+<AudioChannel type="1" content="1" />
+<AudioSampleRate type="2" content="16000" />
+</Profile3>
+<Profile4>
+<Enable type="1" content="0" />
+<Codec type="1" content="1" />
+<Scale type="1" content="2" />
+<FPS type="1" content="5" />
+<IPRatio type="1" content="5" />
+<EncodeMethod type="1" content="0" />
+<Bitrate type="2" content="384" />
+<Quality type="1" content="2" />
+<MaxBitrate type="2" content="768" />
+<MinBitrate type="2" content="768" />
+<AudioEnable type="1" content="1" />
+<AudioCodec type="1" content="0" />
+<AudioChannel type="1" content="1" />
+<AudioSampleRate type="2" content="16000" />
+</Profile4>
+<Profile5>
+<Enable type="1" content="0" />
+<Codec type="1" content="1" />
+<Scale type="1" content="1" />
+<FPS type="1" content="1" />
+<IPRatio type="1" content="1" />
+<EncodeMethod type="1" content="0" />
+<Bitrate type="2" content="1024" />
+<Quality type="1" content="1" />
+<MaxBitrate type="2" content="768" />
+<MinBitrate type="2" content="768" />
+<AudioEnable type="1" content="0" />
+<AudioCodec type="1" content="0" />
+<AudioChannel type="1" content="1" />
+<AudioSampleRate type="2" content="16000" />
+</Profile5>
+<Profile6>
+<Enable type="1" content="0" />
+<Codec type="1" content="1" />
+<Scale type="1" content="1" />
+<FPS type="1" content="1" />
+<IPRatio type="1" content="1" />
+<EncodeMethod type="1" content="0" />
+<Bitrate type="2" content="1024" />
+<Quality type="1" content="1" />
+<MaxBitrate type="2" content="768" />
+<MinBitrate type="2" content="768" />
+<AudioEnable type="1" content="0" />
+<AudioCodec type="1" content="0" />
+<AudioChannel type="1" content="1" />
+<AudioSampleRate type="2" content="16000" />
+</Profile6>
+<RTPServer>
+<Enable type="1" content="1" />
+<Authenticate type="1" content="0" />
+<Port type="2" content="554" />
+<Url1 type="3" content="live/profile.0" />
+<Url2 type="3" content="live/profile.1" />
+<Url3 type="3" content="" />
+<Url4 type="3" content="3gpp" />
+<Url5 type="3" content="user1" />
+<Url6 type="3" content="user2" />
+<AudioEnable4 type="1" content="0" />
+<RejectExtIP type="1" content="1" />
+</RTPServer>
+<SnapShotPool>
+<ProfileID type="1" content="3" />
+</SnapShotPool>
+<Image>
+<InputSize type="1" content="0" />
+<BW type="1" content="0" />
+<Frequency type="1" content="0" />
+<Flip type="1" content="0" />
+<Mirror type="1" content="0" />
+<Brightness type="1" content="50" />
+<Contrast type="1" content="50" />
+<Saturation type="1" content="50" />
+<Sharpness type="1" content="40" />
+<Hue type="1" content="50" />
+<AutoExposure type="1" content="1" />
+<WhiteBalance type="1" content="1" />
+<AutoGain type="1" content="1" />
+<BLControl type="1" content="1" />
+<NightShot type="1" content="0" />
+<NoiseReduction type="1" content="3" />
+<BLCompensation type="1" content="0" />
+<Source type="1" content="0" />
+<AnalogOutput type="1" content="2"/>
+<IrAuto type="1" content="1"/>
+<IrUserManual type="1" content="0"/>
+<IrSchedule type="1" content="0"/>
+<IrState type="1" content="0"/>
+<IrInterface type="1" content="2"/>
+<ICR type="1" content="0"/>
+<Indoor type="1" content="1"/>
+<AutoBW type="1" content="1"/>
+<CameraYChangeModeThreshold type="1" content="48" />
+</Image>
+<_Image>
+<InputSize type="1" content="0" />
+<BW type="1" content="0" />
+<Frequency type="1" content="0" />
+<Flip type="1" content="0" />
+<Mirror type="1" content="0" />
+<Brightness type="1" content="50" />
+<Contrast type="1" content="50" />
+<Saturation type="1" content="50" />
+<Sharpness type="1" content="40" />
+<Hue type="1" content="50" />
+<AutoExposure type="1" content="1" />
+<WhiteBalance type="1" content="1" />
+<AutoGain type="1" content="1" />
+<BLControl type="1" content="1" />
+<NightShot type="1" content="0" />
+<NoiseReduction type="1" content="3" />
+<BLCompensation type="1" content="0" />
+<Source type="1" content="0" />
+<AnalogOutput type="1" content="2"/>
+<IrAuto type="1" content="1"/>
+<IrState type="1" content="0"/>
+<IrUserManual type="1" content="0"/>
+<IrSchedule type="1" content="0"/>
+<IrInterface type="1" content="2"/>
+<ICR type="1" content="0"/>
+<Indoor type="1" content="1"/>
+<AutoBW type="1" content="1"/>
+<CameraYChangeModeThreshold type="1" content="48" />
+</_Image>
+<LightSensorADC>
+<ADCThreshold type="1" content="45"/>
+<ADCThreshold_H type="1" content="37"/>
+<ADCThreshold_M type="1" content="23"/>
+<ADCThreshold_L type="1" content="19"/>
+<Offset_DN type="1" content="2" />
+<Offset_ND type="1" content="3" />
+<Sensitivity type="1" content="1" />
+</LightSensorADC>
+<Microphone>
+<Enable type="1" content="1" />
+<Volume type="1" content="80" />
+<SampleRate type="2" content="8000" />
+<Channel type="1" content="2" />
+<SampleSize type="1" content="16" />
+</Microphone>
+<Speaker>
+<Enable type="1" content="0" />
+<Volume type="1" content="50" />
+</Speaker>
+<DLink15>
+<Register type="1" content="0"/>
+<Remote type="1" content="0"/>
+<ProvHost type="3" content="http://prov.dlinklife.com:80/"/>
+<Email type="4" content=""/>
+<Argv1 type="5" content=""/>
+<Argv2 type="5" content=""/>
+<Argv3 type="5" content=""/>
+<Argv4 type="5" content=""/>
+<Argv5 type="5" content=""/>
+<Argv6 type="5" content=""/>
+<Argv7 type="5" content=""/>
+<Argv8 type="5" content=""/>
+<Argv9 type="5" content=""/>
+<Argv10 type="5" content=""/>
+</DLink15>
+<Rule01>
+<Name type="3" content="SnapSMTP" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorSnapshot" />
+<Target type="3" content="TargetSnapSMTP" />
+<Break type="2" content="0" />
+</Rule01>
+<Rule02>
+<Name type="3" content="SnapFTP" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorSnapshot" />
+<Target type="3" content="TargetSnapFTP" />
+<Break type="2" content="0" />
+</Rule02>
+<Rule03>
+<Name type="3" content="CSnapSD" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorContShot" />
+<Target type="3" content="TargetCShotSD" />
+<Break type="2" content="0" />
+</Rule03>
+<Rule04>
+<Name type="3" content="ClipSMTP" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorVideoclip" />
+<Target type="3" content="TargetClipSMTP" />
+<Break type="2" content="60" />
+</Rule04>
+<Rule05>
+<Name type="3" content="ClipFTP" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorVideoclip" />
+<Target type="3" content="TargetClipFTP" />
+<Break type="2" content="60" />
+</Rule05>
+<Rule06>
+<Name type="3" content="ClipSD" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorVideoclip" />
+<Target type="3" content="TargetClipSD" />
+<Break type="2" content="60" />
+</Rule06>
+<Rule07>
+<Name type="3" content="RecSD" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorRecording" />
+<Target type="3" content="TargetRecSD" />
+<Break type="2" content="0" />
+</Rule07>
+<Rule08>
+<Name type="3" content="RecSam" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorRecording" />
+<Target type="3" content="TargetRecSam" />
+<Break type="2" content="0" />
+</Rule08>
+<Rule09>
+<Name type="3" content="CSnapSam" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="ActorContShot" />
+<Target typem="3" content="TargetCShotSam" />
+<Break type="2" content="0" />
+</Rule09>
+<Rule10>
+<Name type="3" content="DIDO" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,0,0,1,0,0" />
+<Item02 type="3" content="1,0,0,2,0,0" />
+<Item03 type="3" content="2,0,0,3,0,0" />
+<Item04 type="3" content="3,0,0,4,0,0" />
+<Item05 type="3" content="4,0,0,5,0,0" />
+<Item06 type="3" content="5,0,0,6,0,0" />
+<Item07 type="3" content="6,0,0,0,0,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="Actordido" />
+<Target type="3" content="TargetNONE" />
+<Break type="2" content="0" />
+</Rule10>
+<Rule11>
+<Name type="3" content="ir" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,6,0,1,18,0" />
+<Item02 type="3" content="1,6,0,2,18,0" />
+<Item03 type="3" content="2,6,0,3,18,0" />
+<Item04 type="3" content="3,6,0,4,18,0" />
+<Item05 type="3" content="4,6,0,5,18,0" />
+<Item06 type="3" content="5,6,0,6,18,0" />
+<Item07 type="3" content="6,6,0,0,18,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="Actorir" />
+<Target type="3" content="TargetNONE" />
+<Break type="2" content="0" />
+</Rule11>
+<Rule12>
+<Name type="3" content="reboot" />
+<Etag type="2" content="0" />
+<Enable type="1" content="0" />
+<Item01 type="3" content="0,12,0,0,13,0" />
+<Item02 type="3" content="1,12,0,1,13,0" />
+<Item03 type="3" content="2,12,0,2,13,0" />
+<Item04 type="3" content="3,12,0,3,13,0" />
+<Item05 type="3" content="4,12,0,4,13,0" />
+<Item06 type="3" content="5,12,0,5,13,0" />
+<Item07 type="3" content="6,12,0,6,13,0" />
+<EventMask type="2" content="0" />
+<Actor type="3" content="Actorreboot" />
+<Target type="3" content="TargetNONE" />
+<Break type="2" content="0" />
+</Rule12>
+<MotionDct>
+<Enable type="1" content="1" />
+<Region1U type="5" content="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" />
+<Region1L type="5" content="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" />
+<Sense1 type="1" content="90" />
+<Percent1 type="1" content="10" />
+<Region2U type="5" content="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" />
+<Region2L type="5" content="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" />
+<Sense2 type="1" content="0" />
+<Percent2 type="1" content="0" />
+<Region3U type="5" content="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" />
+<Region3L type="5" content="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" />
+<Sense3 type="1" content="0" />
+<Percent3 type="1" content="0" />
+<MedianStep type="2" content="100" />
+<DeviationStep type="2" content="100" />
+<DeltaAmp type="2" content="4" />
+<PIRBoundLv type="2" content="50" />
+</MotionDct>
+<Record>
+<Enable type="1" content="0" />
+<ActorType type="1" content="1" />
+<Prerecord type="2" content="5" />
+<Postrecord type="2" content="5" />
+<NextTrigger type="2" content="0" />
+<VideoLength type="2" content="60" />
+<TargetType type="2" content="0" />
+<FileType type="1" content="1" />
+<CsnapInterval type="2" content="1" />
+</Record>
+<Snapshot>
+<Enable type="1" content="0" />
+<SnapType type="1" content="0" />
+<ToFTP type="1" content="0" />
+<ToSMTP type="1" content="0" />
+<ToSD type="1" content="0" />
+<SixPicInterval type="2" content="1000" />
+<FTPMVBreakTime type="2" content="10" />
+<SMTPMVBreakTime type="2" content="30" />
+</Snapshot>
+<VideoClip>
+<FileType type="1" content="1" />
+<Enable type="1" content="0" />
+<ToFTP type="1" content="0" />
+<ToSMTP type="1" content="0" />
+<ToSD type="1" content="0" />
+<Prerecord type="2" content="5" />
+<MaxDuration type="2" content="10" />
+<FTPMVBreakTime type="2" content="10" />
+<SMTPMVBreakTime type="2" content="30" />
+</VideoClip>
+<Schedule>
+<Schedule01 type="4" content="record,Always" />
+<Schedule02 type="4" content="snapshot,Always" />
+<Schedule03 type="4" content="privacy,None" />
+<Schedule04 type="4" content="icr,None" />
+<Schedule05 type="4" content="patrol,None" />
+<Schedule06 type="4" content="videoclip,Always" />
+<Schedule07 type="4" content="dido,Always" />
+<Schedule08 type="4" content="ir,Always" />
+<Schedule09 type="4" content="reboot,Always" />
+<Profile01 type="3" content="Record" />
+<TriggerBy01 type="2" content="0" />
+<TriggerEvent01 type="2" content="1" />
+<SchEnable01 type="1" content="0" />
+<Item01_01 type="3" content="0,0,0,1,0,0" />
+<Item01_02 type="3" content="1,0,0,2,0,0" />
+<Item01_03 type="3" content="2,0,0,3,0,0" />
+<Item01_04 type="3" content="3,0,0,4,0,0" />
+<Item01_05 type="3" content="4,0,0,5,0,0" />
+<Item01_06 type="3" content="5,0,0,6,0,0" />
+<Item01_07 type="3" content="6,0,0,0,0,0" />
+<Profile02 type="3" content="Snapshot" />
+<TriggerBy02 type="2" content="0" />
+<TriggerEvent02 type="2" content="1" />
+<SchEnable02 type="1" content="0" />
+<Item02_01 type="3" content="0,0,0,1,0,0" />
+<Item02_02 type="3" content="1,0,0,2,0,0" />
+<Item02_03 type="3" content="2,0,0,3,0,0" />
+<Item02_04 type="3" content="3,0,0,4,0,0" />
+<Item02_05 type="3" content="4,0,0,5,0,0" />
+<Item02_06 type="3" content="5,0,0,6,0,0" />
+<Item02_07 type="3" content="6,0,0,0,0,0" />
+<Profile03 type="3" content="Privacy" />
+<TriggerBy03 type="2" content="0" />
+<SchEnable03 type="1" content="0" />
+<Item03_01 type="3" content="0,0,0,1,0,0" />
+<Item03_02 type="3" content="1,0,0,2,0,0" />
+<Item03_03 type="3" content="2,0,0,3,0,0" />
+<Item03_04 type="3" content="3,0,0,4,0,0" />
+<Item03_05 type="3" content="4,0,0,5,0,0" />
+<Item03_06 type="3" content="5,0,0,6,0,0" />
+<Item03_07 type="3" content="6,0,0,0,0,0" />
+<Profile04 type="3" content="ICR" />
+<TriggerBy04 type="2" content="0" />
+<SchEnable04 type="1" content="0" />
+<Item04_01 type="3" content="0,0,0,1,0,0" />
+<Item04_02 type="3" content="1,0,0,2,0,0" />
+<Item04_03 type="3" content="2,0,0,3,0,0" />
+<Item04_04 type="3" content="3,0,0,4,0,0" />
+<Item04_05 type="3" content="4,0,0,5,0,0" />
+<Item04_06 type="3" content="5,0,0,6,0,0" />
+<Item04_07 type="3" content="6,0,0,0,0,0" />
+<Profile05 type="3" content="Patrol" />
+<TriggerBy05 type="2" content="0" />
+<SchEnable05 type="1" content="0" />
+<Item05_01 type="3" content="0,0,0,1,0,0" />
+<Item05_02 type="3" content="1,0,0,2,0,0" />
+<Item05_03 type="3" content="2,0,0,3,0,0" />
+<Item05_04 type="3" content="3,0,0,4,0,0" />
+<Item05_05 type="3" content="4,0,0,5,0,0" />
+<Item05_06 type="3" content="5,0,0,6,0,0" />
+<Item05_07 type="3" content="6,0,0,0,0,0" />
+<Profile06 type="3" content="VideoClip" />
+<TriggerBy06 type="2" content="0" />
+<TriggerEvent06 type="2" content="1" />
+<SchEnable06 type="1" content="0" />
+<Item06_01 type="3" content="0,0,0,1,0,0" />
+<Item06_02 type="3" content="1,0,0,2,0,0" />
+<Item06_03 type="3" content="2,0,0,3,0,0" />
+<Item06_04 type="3" content="3,0,0,4,0,0" />
+<Item06_05 type="3" content="4,0,0,5,0,0" />
+<Item06_06 type="3" content="5,0,0,6,0,0" />
+<Item06_07 type="3" content="6,0,0,0,0,0" />
+<Profile07 type="3" content="Dido" />
+<TriggerBy07 type="2" content="0" />
+<SchEnable07 type="1" content="0" />
+<Item07_01 type="3" content="0,0,0,1,0,0" />
+<Item07_02 type="3" content="1,0,0,2,0,0" />
+<Item07_03 type="3" content="2,0,0,3,0,0" />
+<Item07_04 type="3" content="3,0,0,4,0,0" />
+<Item07_05 type="3" content="4,0,0,5,0,0" />
+<Item07_06 type="3" content="5,0,0,6,0,0" />
+<Item07_07 type="3" content="6,0,0,0,0,0" />
+<Profile08 type="3" content="ir" />
+<SchEnable08 type="1" content="0" />
+<TriggerBy08 type="2" content="0" />
+<SchEnable08 type="1" content="0" />
+<Item08_01 type="3" content="0,6,0,1,18,0" />
+<Item08_02 type="3" content="1,6,0,2,18,0" />
+<Item08_03 type="3" content="2,6,0,3,18,0" />
+<Item08_04 type="3" content="3,6,0,4,18,0" />
+<Item08_05 type="3" content="4,6,0,5,18,0" />
+<Item08_06 type="3" content="5,6,0,6,18,0" />
+<Item08_07 type="3" content="6,6,0,0,18,0" />
+<Profile09 type="3" content="reboot" />
+<TriggerBy09 type="2" content="0" />
+<SchEnable09 type="1" content="0" />
+<Item09_01 type="3" content="0,01,00,1,18,00" />
+<Item09_02 type="3" content="1,01,00,2,18,00" />
+<Item09_03 type="3" content="2,01,00,3,18,00" />
+<Item09_04 type="3" content="3,01,00,4,18,00" />
+<Item09_05 type="3" content="4,01,00,5,18,00" />
+<Item09_06 type="3" content="5,01,00,6,18,00" />
+<Item09_07 type="3" content="6,01,00,0,18,00" />
+</Schedule>
+<SchReboot>
+<Enable type="1" content="0" />
+<Weekday type="3" content="0,1,2,3,4,5,6" />
+<Time type="3" content="0:0" />
+</SchReboot>
+<Ble>
+<Mode type="1" content="1"/>
+<ChallengeKey type="3" content=""/>
+<Key type="5" content=""/>
+</Ble>
+<OSD>
+<Enable type="1" content="1" />
+<Text type="3" content="" />
+<TimeStamp type="1" content="1" />
+<PositionX type="2" content="0" />
+<PositionY type="2" content="0" />
+<Transparent type="1" content="0" />
+<FontSize type="2" content="32" />
+<Position type="3" content="top_left" />
+<CustomFont type="1" content="1" />
+</OSD>
+<VideoPool>
+<ProfileID type="1" content="1" />
+</VideoPool>
+<AudioDetection>
+<Enable type="1" content="1" />
+<DetectLevel type="2" content="70" />
+</AudioDetection>
+<Extras>
+<FixMe type="1" content="1"/>
+</Extras>
+</data>

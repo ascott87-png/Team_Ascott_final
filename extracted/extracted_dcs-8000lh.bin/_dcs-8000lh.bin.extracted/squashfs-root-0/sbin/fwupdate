@@ -1,0 +1,230 @@
+#!/bin/sh
+
+dumpSystemKeys() {
+	echo -n "\
+	Version_ss
+	OEMVersion_ss
+	Vendor_ms
+	OEM_ms
+	Model_ss
+	ProdNumber_ss
+	ModelW_ss
+	ProdNumberW_ss
+	"
+}
+
+get_host_setting() {
+	eval $(dumpSystemKeys | tdb get System) || return 1
+	eval $(pibinfo all) || return 1
+	version=$Version_ss
+	vendor=$Vendor_ms
+	oem=$OEM_ms
+	model=$Model_ss
+	product=$ProdNumber_ss
+	hwBoard=$HWBoard
+	hwVersion=$HWVersion
+	desc=""
+	result=""
+	hasPT=__mcu__
+	[ "$hasPT" = "yes" ] && mcuVersion=$(pt_firmware -v)
+	StaticTrustLevel=`tdb get SecureFW StaticTL_byte`
+}
+
+getWeight() {
+	major=$(echo "$1" | cut -d'.' -f1) || major=0
+	minor=$(echo "$1" | cut -d'.' -f2) || minor=0
+	sub=$(echo "$1" | cut -d'.' -f3 | cut -d'-' -f1) || sub=0
+	echo $(( $major*100 + $minor*10 + $sub ))
+}
+
+verifyFirmware() {
+	result=uploadSign
+	#tar tf "$uploadbin" > /dev/null 2> /dev/null || return 1
+	fw_sign_verify.sh $uploadbin /etc/db/verify.key > /dev/null 2> /dev/null
+	return $?
+}
+
+decryptFirmware() {
+	result=uploadDecrypt
+	pibinfo PriKey > $dir/decrypt.key 2> /dev/null
+	fw_decrypt.sh $dir/decrypt.key $out > /dev/null 2> /dev/null || return 1
+	return 0
+}
+
+exam_self() {
+	result=uploadFail
+	[ "$out" != "" ] || return 1
+	[ -f "$out" ] || return 1
+	chmod u+x "$out"
+	result=examFail
+	"$out" exam $uploadbin > /dev/null 2> /dev/null || return 1
+	return 0
+}
+
+check_setting() {
+	result=infoFail
+	eval $("$out" info) || return 1
+	version=$VERSION
+	vendor=$VENDOR
+	oem=$OEM
+	model=$MODEL
+	product=$PRODUCT
+	desc=$DESCRIPT
+	hwBoard=$HWBOARD
+	hwVersion=$HWVERSION
+	result=invalidImage
+
+	# at least SIGN, APP, vendor must be the same
+	[ "$MECH_SIGN" = "QPAT" ] || return 1
+	[ "$MECH_APP" = "doUpdate" ] || return 1
+	#[ "$VENDOR" = "$Vendor_ms" ] || return 1
+
+	# if scenario is force, then done
+	[ "$scenario" = "forceUpdate" ] && return 0
+
+	# Note here:
+	# HWBOARD, HWVERSION are from update image
+	# HWBoard, HWVersion are from pibinfo
+	# and they are different
+	HWMAJOR=$(echo "$HWVERSION" | cut -d'.' -f1)
+	HWMajor=$(echo "$HWVersion" | cut -d'.' -f1)
+
+	# if scenario is factory, check only hardware
+	if [ "$scenario" = "factoryUpdate" ]; then
+		[ "$HWBOARD" = "$HWBoard" ] || return 1
+		[ "$HWMAJOR" = "$HWMajor" ] || return 1
+		return 0
+	fi
+
+	# all other scenarios, check all
+	[ "$HWBOARD" = "$HWBoard" ] || return 1
+	[ "$HWMAJOR" = "$HWMajor" ] || return 1
+	[ "$OEM" = "$OEM_ms" ] || return 1
+	#[ "$MODEL" = "$Model_ss" ] || return 1
+	models=$(cat $dir/certificate.info | grep Models | cut -d":" -f 2)
+	$(echo "$models" | grep "$Model_ss" >/dev/null 2>/dev/null) || return 1
+	now=$(getWeight "$Version_ss" 2> /dev/null) || return 1
+	then=$(getWeight "$VERSION" 2> /dev/null) || return 1
+	[ "$then" -ge "$now" ] || return 1
+	return 0
+}
+
+do_info() {
+	result="infoOK"
+	echo "SIGN_STATUS=$sign"
+	publisher=$(cat $dir/certificate.info | grep Publisher | cut -d":" -f 2)
+	echo "PUBLISHER=$publisher"
+	echo "HWBOARD=$HWBOARD"
+	echo "HWVERSION=$HWVERSION"
+	models=$(cat $dir/certificate.info | grep Models | cut -d":" -f 2)
+	echo "SUP_MODELS=$models"
+	echo "OEM=$OEM"
+	echo "OEMVERSION=$OEMVersion_ss"
+	echo "COMPATIBILITY=$VERSION"
+	echo "PACKAGES=$PACKAGE"
+	return 0
+}
+
+do_update() {
+	result=saveFail
+	send_cmd watchdog 643 >/dev/null 2>/dev/null
+	"$out" update $uploadbin > /dev/null 2> /dev/null || return 1
+	result=updateOK
+	echo "0"
+	return 0
+}
+
+do_prepare() {
+	result=prepareFail
+	if ! get_host_setting; then
+		echo "-1"
+		return 1
+	fi
+	TrustLevel=`tdb get SecureFW _TrustLevel_byte`
+	verifyFirmware
+	ret=$?
+	case $ret in
+		2)
+			sign="not_signed"
+		;;
+		0)
+			sign="trust"
+		;;
+		*)
+			sign="untrust"
+		;;
+	esac	
+	if [ "$do_up" = "1" -a "$ret" != "0" -a "$TrustLevel" = "1" ]; then
+		echo "3"
+		return 1
+	fi
+
+	if ! decryptFirmware; then
+		echo "4"
+		return 1
+	fi	
+
+	if ! check_setting; then
+		echo "1"
+		return 1
+	fi
+
+	if ! exam_self; then
+		echo "2"
+		return 1
+	fi
+
+	return 0
+}
+
+do_clean_up() {
+	[ -d "$dir" ] && rm -rf $dir
+	[ "$result" == "infoOK" ] && exit 0
+	[ "$result" == "updateOK" ] && {(sleep 5 && reboot) > /dev/null 2> /dev/null &} && exit 0
+	/etc/rc.d/init.d/services.sh start > /dev/null 2> /dev/null && exit 1
+}
+
+die() {
+	echo $@
+	exit 1
+}
+
+showUsage() {
+	die "$0 {info/update(default)/factoryUpdate/forceUpdate} bin"
+}
+
+action=$1
+uploadbin=$2
+end=$3
+
+[ "$action" = ""  ] && [ "$uploadbin" = "" ] && showUsage
+if [ "$2" = "" ] ; then
+	uploadbin="$action"
+	action="update"
+fi
+[ ! -f "$uploadbin" ] && echo "-1" && exit 1
+[ "$end" = "" ] || showUsage
+scenario=$(basename $1 | cut -d'.' -f1)
+export SCENARIO="$scenario"
+dir="/tmp/update"
+out="$dir/out.bin"
+do_up=0
+
+case $action in
+	info)
+		do_prepare && do_info
+		do_clean_up
+	;;
+	update | factoryUpdate | forceUpdate)
+		memfree
+		do_up=1
+		do_prepare && do_update
+		do_clean_up
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+exit 0
+

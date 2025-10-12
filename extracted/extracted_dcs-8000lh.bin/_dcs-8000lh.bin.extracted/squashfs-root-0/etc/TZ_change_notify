@@ -1,0 +1,5 @@
+#!/bin/sh
+
+timezone=`cat /etc/TZ`
+tdb set TimeZone POSIXTZ_ms=$timezone
+#/etc/rc.d/init.d/trservices.sh restart

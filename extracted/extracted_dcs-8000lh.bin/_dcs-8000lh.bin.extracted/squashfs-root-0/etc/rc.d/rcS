@@ -1,0 +1,38 @@
+#!/bin/sh
+
+sh /etc/rc.d/rc.sysinit start
+
+# Start all init scripts in /etc/init.d
+# executing them in numerical order.
+
+if [ "$(pibinfo BootMode)" = "mfg" ]; then
+	echo ============ mfg mode ===============
+	target=/etc/rc.d/rcS_mfg.d/S??*
+else
+	echo ============ normal mode ===============
+	target=/etc/rc.d/rcS.d/S??*
+fi
+
+for i in $target ;do
+
+    # Ignore dangling symlinks (if any).
+    [ ! -f "$i" ] && continue
+
+    case "$i" in
+	*.sh )
+	    # Source shell script for speed.
+	    (
+		trap - INT QUIT TSTP
+		set start
+		. $i
+	    )
+	    ;;
+	* )
+	    # No sh extension, so fork subprocess.
+	    $i start
+	    ;;
+    esac
+done
+
+sh /etc/rc.d/rc.local start
+touch /tmp/trservices_done

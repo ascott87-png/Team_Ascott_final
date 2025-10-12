@@ -1,0 +1,4 @@
+::sysinit:/etc/rc.d/rcS start
+#::respawn:/bin/sh < /dev/ttyS1 2>&1 > /dev/ttyS1
+::respawn:/bin/busybox getty -L ttyS1 57600 vt100
+::restart:/sbin/init

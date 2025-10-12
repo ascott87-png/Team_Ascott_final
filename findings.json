@@ -1,0 +1,324 @@
+[
+  {
+    "firmware": "firmware/dcs-8000lh.bin",
+    "type": "bin",
+    "findings": [
+      "Extracted filesystem to: extracted/extracted_dcs-8000lh.bin/_dcs-8000lh.bin.extracted/squashfs-root"
+    ]
+  },
+  {
+    "firmware": "firmware/wr-841n.bin",
+    "type": "bin",
+    "findings": [
+      "Extracted filesystem to: extracted/extracted_wr-841n.bin/_wr-841n.bin.extracted/squashfs-root"
+    ]
+  },
+  {
+    "firmware": "firmware/bare-metal-demo.elf",
+    "type": "elf",
+    "findings": [
+      {
+        "finding_id": "6b12a14d6915608767e820de009fe4601c53b611",
+        "rule_name": "AWS API Credentials",
+        "rule_text_id": "np.aws.6",
+        "rule_structural_id": "39d60c56d8a84ca6ab5999de8fea93657e3cae99",
+        "groups": [
+          "QVNJQUJFQ0ZQUENOWEpZVjRSVFU=",
+          "RFM2TWwwMVo0aklwMDRoSUZNMHhyTkV1UlNtZzgyMy8wNGpxdWdKOQ=="
+        ],
+        "num_matches": 2,
+        "num_redundant_matches": 0,
+        "statuses": [],
+        "comment": null,
+        "mean_score": null,
+        "matches": [
+          {
+            "provenance": [
+              {
+                "kind": "file",
+                "path": "firmware/bare-metal-demo.elf"
+              }
+            ],
+            "blob_metadata": {
+              "id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+              "num_bytes": 6844,
+              "mime_essence": null,
+              "charset": null
+            },
+            "blob_id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+            "location": {
+              "offset_span": {
+                "start": 4372,
+                "end": 4457
+              },
+              "source_span": {
+                "start": {
+                  "line": 2,
+                  "column": 146
+                },
+                "end": {
+                  "line": 2,
+                  "column": 230
+                }
+              }
+            },
+            "groups": [
+              "QVNJQUJFQ0ZQUENOWEpZVjRSVFU=",
+              "RFM2TWwwMVo0aklwMDRoSUZNMHhyTkV1UlNtZzgyMy8wNGpxdWdKOQ=="
+            ],
+            "snippet": {
+              "before": "\ufffd\u0001\u0000\u0000\u0000HpG\ufffd\u0000\u0000\u0000\u0000HpG\ufffd\u0000\u0000\u0000\u0017J\u0018K0\ufffd\u0013`\u0017K\u0018HS`\u0018K\ufffd`\u0018K\ufffd`\u0003x\u0001F\u00010\ufffd\u0016L\u00019\u0011\ufffd\u0001_\u0014\ufffd\u0001;\u001d\ufffd#\ufffd\ufffdB\ufffd\ufffd\ufffd\ufffd\u0000+\ufffd\ufffd\fI\u0000\ufffd\u00013\u0011\ufffd\u0001\u000b\u0000(\ufffd\ufffd\rH\ufffd\u001c\ufffd+\ufffd\ufffd\u0001F\u000bK\u0011aSa\u0000\ufffd\ufffd\ufffd\nI\ufffd\ufffd\u0000\ufffd\u0000\t\u0000\u0000\f\u0002\u0000\u0000\ufffd\u0001\u0000\u0000!\u0002\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000gho_3NIO5EKtltWAJwsV3FF4Ib4g138HQJYCS02k\u0000ghp_TrUQQOrGwPM0npquMkBx0lLHaOrFLOEHYled\u0000AWS_ACCESS_KEY_ID=",
+              "matching": "ASIABECFPPCNXJYV4RTU\\nAWS_SECRET_ACCESS_KEY=DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\",
+              "after": "n\u0000[default]\\naws_access_key_id = ASIABECFPPCNXJYV4RTU\\naws_secret_access_key = DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\u0000ASIABECFPPCNXJYV4RTU\u0000-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEA"
+            },
+            "structural_id": "16bea960c3684939770ad204ee3dac8fe4f10d51",
+            "rule_structural_id": "39d60c56d8a84ca6ab5999de8fea93657e3cae99",
+            "rule_text_id": "np.aws.6",
+            "rule_name": "AWS API Credentials",
+            "score": null,
+            "comment": null,
+            "status": null,
+            "redundant_to": []
+          },
+          {
+            "provenance": [
+              {
+                "kind": "file",
+                "path": "firmware/bare-metal-demo.elf"
+              }
+            ],
+            "blob_metadata": {
+              "id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+              "num_bytes": 6844,
+              "mime_essence": null,
+              "charset": null
+            },
+            "blob_id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+            "location": {
+              "offset_span": {
+                "start": 4490,
+                "end": 4577
+              },
+              "source_span": {
+                "start": {
+                  "line": 2,
+                  "column": 264
+                },
+                "end": {
+                  "line": 2,
+                  "column": 350
+                }
+              }
+            },
+            "groups": [
+              "QVNJQUJFQ0ZQUENOWEpZVjRSVFU=",
+              "RFM2TWwwMVo0aklwMDRoSUZNMHhyTkV1UlNtZzgyMy8wNGpxdWdKOQ=="
+            ],
+            "snippet": {
+              "before": "\u0000\u0000\f\u0002\u0000\u0000\ufffd\u0001\u0000\u0000!\u0002\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000gho_3NIO5EKtltWAJwsV3FF4Ib4g138HQJYCS02k\u0000ghp_TrUQQOrGwPM0npquMkBx0lLHaOrFLOEHYled\u0000AWS_ACCESS_KEY_ID=ASIABECFPPCNXJYV4RTU\\nAWS_SECRET_ACCESS_KEY=DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000[default]\\naws_access_key_id = ",
+              "matching": "ASIABECFPPCNXJYV4RTU\\naws_secret_access_key = DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\",
+              "after": "n\u0000DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\u0000ASIABECFPPCNXJYV4RTU\u0000-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC35XIoks1b90ic\nH8I4DPd5ultYCMmgQx3UfZvW+D9ftJs5K5GJ1MZLD3+06bAaVPFW4IcNCakPW7k+\ncn4Nu14o8dC2pA49EXkUDYFqY97prI89gp"
+            },
+            "structural_id": "748a90d6d80cc2436f4865e7b0eb8c00e0f69f00",
+            "rule_structural_id": "39d60c56d8a84ca6ab5999de8fea93657e3cae99",
+            "rule_text_id": "np.aws.6",
+            "rule_name": "AWS API Credentials",
+            "score": null,
+            "comment": null,
+            "status": null,
+            "redundant_to": []
+          }
+        ]
+      },
+      {
+        "finding_id": "f3eb2e440c00a79785ab8d158943f632a2a99468",
+        "rule_name": "GitHub OAuth Access Token",
+        "rule_text_id": "np.github.2",
+        "rule_structural_id": "2d76a219d8a6661a59e3742b508749338db05943",
+        "groups": [
+          "Z2hvXzNOSU81RUt0bHRXQUp3c1YzRkY0SWI0ZzEzOEhRSllDUzAyaw=="
+        ],
+        "num_matches": 1,
+        "num_redundant_matches": 0,
+        "statuses": [],
+        "comment": null,
+        "mean_score": null,
+        "matches": [
+          {
+            "provenance": [
+              {
+                "kind": "file",
+                "path": "firmware/bare-metal-demo.elf"
+              }
+            ],
+            "blob_metadata": {
+              "id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+              "num_bytes": 6844,
+              "mime_essence": null,
+              "charset": null
+            },
+            "blob_id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+            "location": {
+              "offset_span": {
+                "start": 4272,
+                "end": 4312
+              },
+              "source_span": {
+                "start": {
+                  "line": 2,
+                  "column": 46
+                },
+                "end": {
+                  "line": 2,
+                  "column": 85
+                }
+              }
+            },
+            "groups": [
+              "Z2hvXzNOSU81RUt0bHRXQUp3c1YzRkY0SWI0ZzEzOEhRSllDUzAyaw=="
+            ],
+            "snippet": {
+              "before": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000HpG!\u0002\u0000\u0000\u0000HpG\f\u0002\u0000\u0000\u0000HpG\ufffd\u0001\u0000\u0000\u0000HpG\ufffd\u0000\u0000\u0000\u0000HpG\ufffd\u0000\u0000\u0000\u0017J\u0018K0\ufffd\u0013`\u0017K\u0018HS`\u0018K\ufffd`\u0018K\ufffd`\u0003x\u0001F\u00010\ufffd\u0016L\u00019\u0011\ufffd\u0001_\u0014\ufffd\u0001;\u001d\ufffd#\ufffd\ufffdB\ufffd\ufffd\ufffd\ufffd\u0000+\ufffd\ufffd\fI\u0000\ufffd\u00013\u0011\ufffd\u0001\u000b\u0000(\ufffd\ufffd\rH\ufffd\u001c\ufffd+\ufffd\ufffd\u0001F\u000bK\u0011aSa\u0000\ufffd\ufffd\ufffd\nI\ufffd\ufffd\u0000\ufffd\u0000\t\u0000\u0000\f\u0002\u0000\u0000\ufffd\u0001\u0000\u0000!\u0002\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000",
+              "matching": "gho_3NIO5EKtltWAJwsV3FF4Ib4g138HQJYCS02k",
+              "after": "\u0000ghp_TrUQQOrGwPM0npquMkBx0lLHaOrFLOEHYled\u0000AWS_ACCESS_KEY_ID=ASIABECFPPCNXJYV4RTU\\nAWS_SECRET_ACCESS_KEY=DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000[default]\\naws_access_key_id = ASIABECFPPCNXJYV4RTU\\naws_secret_access_key = DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/"
+            },
+            "structural_id": "e7181e4d2fd62a4fa373855953867ff7dd2b45b1",
+            "rule_structural_id": "2d76a219d8a6661a59e3742b508749338db05943",
+            "rule_text_id": "np.github.2",
+            "rule_name": "GitHub OAuth Access Token",
+            "score": null,
+            "comment": null,
+            "status": null,
+            "redundant_to": []
+          }
+        ]
+      },
+      {
+        "finding_id": "aec60933198eaa0e0e3126c33d2b7bc1afebf475",
+        "rule_name": "GitHub Personal Access Token",
+        "rule_text_id": "np.github.1",
+        "rule_structural_id": "f6c4fca24a1c7f275d51d2718a1585ca6e4ae664",
+        "groups": [
+          "Z2hwX1RyVVFRT3JHd1BNMG5wcXVNa0J4MGxMSGFPckZMT0VIWWxlZA=="
+        ],
+        "num_matches": 1,
+        "num_redundant_matches": 0,
+        "statuses": [],
+        "comment": null,
+        "mean_score": null,
+        "matches": [
+          {
+            "provenance": [
+              {
+                "kind": "file",
+                "path": "firmware/bare-metal-demo.elf"
+              }
+            ],
+            "blob_metadata": {
+              "id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+              "num_bytes": 6844,
+              "mime_essence": null,
+              "charset": null
+            },
+            "blob_id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+            "location": {
+              "offset_span": {
+                "start": 4313,
+                "end": 4353
+              },
+              "source_span": {
+                "start": {
+                  "line": 2,
+                  "column": 87
+                },
+                "end": {
+                  "line": 2,
+                  "column": 126
+                }
+              }
+            },
+            "groups": [
+              "Z2hwX1RyVVFRT3JHd1BNMG5wcXVNa0J4MGxMSGFPckZMT0VIWWxlZA=="
+            ],
+            "snippet": {
+              "before": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000HpG!\u0002\u0000\u0000\u0000HpG\f\u0002\u0000\u0000\u0000HpG\ufffd\u0001\u0000\u0000\u0000HpG\ufffd\u0000\u0000\u0000\u0000HpG\ufffd\u0000\u0000\u0000\u0017J\u0018K0\ufffd\u0013`\u0017K\u0018HS`\u0018K\ufffd`\u0018K\ufffd`\u0003x\u0001F\u00010\ufffd\u0016L\u00019\u0011\ufffd\u0001_\u0014\ufffd\u0001;\u001d\ufffd#\ufffd\ufffdB\ufffd\ufffd\ufffd\ufffd\u0000+\ufffd\ufffd\fI\u0000\ufffd\u00013\u0011\ufffd\u0001\u000b\u0000(\ufffd\ufffd\rH\ufffd\u001c\ufffd+\ufffd\ufffd\u0001F\u000bK\u0011aSa\u0000\ufffd\ufffd\ufffd\nI\ufffd\ufffd\u0000\ufffd\u0000\t\u0000\u0000\f\u0002\u0000\u0000\ufffd\u0001\u0000\u0000!\u0002\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\u0000\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000\ufffd\b\u0000\u0000gho_3NIO5EKtltWAJwsV3FF4Ib4g138HQJYCS02k\u0000",
+              "matching": "ghp_TrUQQOrGwPM0npquMkBx0lLHaOrFLOEHYled",
+              "after": "\u0000AWS_ACCESS_KEY_ID=ASIABECFPPCNXJYV4RTU\\nAWS_SECRET_ACCESS_KEY=DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000[default]\\naws_access_key_id = ASIABECFPPCNXJYV4RTU\\naws_secret_access_key = DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000DS6Ml01Z4jIp04hIFM0xrNEuRSmg82"
+            },
+            "structural_id": "1d24bd16fde9b695ff7a7d1561567be735ccd00e",
+            "rule_structural_id": "f6c4fca24a1c7f275d51d2718a1585ca6e4ae664",
+            "rule_text_id": "np.github.1",
+            "rule_name": "GitHub Personal Access Token",
+            "score": null,
+            "comment": null,
+            "status": null,
+            "redundant_to": []
+          }
+        ]
+      },
+      {
+        "finding_id": "9a49da703c61f89bc77d1af1f7a178f35dffd3c6",
+        "rule_name": "PEM-Encoded Private Key",
+        "rule_text_id": "np.pem.1",
+        "rule_structural_id": "046a96dd5272aa399275afb853a54884611769c0",
+        "groups": [
+          "TUlJRXZnSUJBREFOQmdrcWhraUc5dzBCQVFFRkFBU0NCS2d3Z2dTa0FnRUFBb0lCQVFDMzVYSW9rczFiOTBpYwpIOEk0RFBkNXVsdFlDTW1nUXgzVWZadlcrRDlmdEpzNUs1R0oxTVpMRDMrMDZiQWFWUEZXNEljTkNha1BXN2srCmNuNE51MTRvOGRDMnBBNDlFWGtVRFlGcVk5N3BySTg5Z3BoeE1kNzBqSmdGa0xBdkwyb2FDa3ViSXFXeW5UMGoKNk80QVp4SDgxM0YwUzE1cjR4RzBKRCt6R1h4REZpSDN5c2tCTUx0dDhJdFI3V2N4RWJLeXVKZmJMb2JnMG5TVgpEeFV0eWRXNi9mcFBqM1VDOVZPc21NYjdnaFFkVnJPU1p0U1BNdG1CWnJQTkJnMDhRRFFTYWsyVHNZcmhEaXBlCkRxaWlkVjhMNzFpTVZON1VXc3RlQmJnRWsrb0pFZmc4YlZQck82TGdOakJLM0xzcEYxbU12R01UM3hWVHZ1ZEsKYTc0cFhMaVRBZ01CQUFFQ2dnRUFCeXI3M0tZQU9DMzIyQk1LMUhsNDZmZEFHVG5hZGhNM3BmRXhjbHNoeVQ2MgpjQytKRURqSmMrS0tSVWg0azBZdFZBZ1RhNGd0WFVwamVaSW41S3doZXZJV0F4QjQ5NXRuUDBkWmZJYWhDVFd2CkxhUWFBZ3VDRjhFbEtjNWVkN0JlNzkzbjNZZW5zc01iUDN1VVQxSzFLa2hSaFVsc3lFTEZEV0wrVXFKVExDQXYKUTVWRXpzZjF5TDhrYWk0Y0J1UHNTNUl0U0ErenoyTW5KSUFwbnZaNy9nLytoTWlSYk4zMW1vNFZvZTMxaFpvawovN3dTdHV0UTVDSlZvRW1NYTY4MW95UENydjBRL3daNTdsQ0RMbUxrZXZwSjdzSXV3dlBWcThDVU9UaFk5RHNPCmcvOFJybmRZYk1wNmsxYTRyMnUrRDgwcFZWaU9YNFEwVGgwbW81N096UUtCZ1FEcHhDazVNMm1tTS84bm9jNlgKMXZVbEgzU2w0MS90VzNDV1lxTGUwS25XaDdvSjUrWVAzUGw4dG1ySDlMYkFzSktkakdoS1ZYMU4xaEhxTFpTRApFUjliTHByZlloNTl1ZFlhcjlxeVoxaDhkR0JNNHY3Q1FYWFBQcjJudkp3NGo0NlJKTFlXdmxrSitWMUN4RVprCnBOTS9DTXQvUnpyVlh1S3piU21xbW8zUjV3S0JnUURKWXdlWGcvRTNoNFJXeHlyZGUzejkzZnFOWU1pLy9xV0MKb29oMS9PaGh3ZCtENU44OWEyVDM3bGdSWFZJcm9oMHExSWZqM21qek1sbEZiVGZZVUNVUyt0SG5SMlYwZDBzMAo3bkpZcHdtT2t4Sjhwa1NzRVk2V1BwKzBUYmtLanVoK3ljbzJRY2IvdFlCQUsrbXFJYy9PTW5HTmcyVXhSSVlKCkNsd0J2aENtZFFLQmdRREJRYTVpMzZJa0NUQ1Q3eTBBVW5Gd00wVVlMNVdLZ09IZk1jUThPSDF3SWQwbmUxT3oKSVpnUUJpN1pCL0pkOHB3REs2UzhiMWljRkxIU3k4UFBaMFJvK1dxSDZuSVN0cVBPaER0azZoTTVNR3k4bzV6QgpzNlJWcFNUZG13djdwcExTWTJzMStqOWFBNUdhTlBHTkdzYVpnZ2ZhUFdUaUtRTjZHbkVyM1lJSldRS0JnRkM2Ck9NM2MzeklTU2RON2JVeHhkdzVSRUdIaC9UY3hmZWxhKy9iSUZlTXlFMFpNMWN4S0k2UmJUOFJPTTJVNFRCYmkKTVVMLzRmUXpKNlB6L3lIZ0pxeHdEUHA0SFV4TmtjRTdJRzAzTUZhTjBDaFZna3V6a2dQYVFLekhSempiUm9tawpuRUdacG9yVWwvK2hXcjZQWlR6VDdiNzdmL0g2OVB2a3dqTVVuSm9OQW9HQkFMTzNGUmExTjhkZnZLZTJDTVJWClZHaEdOQjhrQzlsL3BXODByelMyb1VmT3FQTWlLQ2ZJWHY3dmVpdHYySHZNdUJUaE1qMzJjWVhvWVFYUHRlaEUKalJzTThGWDBJNU1UZjRBa1VtcERUTVU0WkdrVmdUM1k2TC9ZYzRSSTl2MlZCUGNZbTJRMzJMeVg0VExRL3pVagpJVXhZd1R4b2hmck5Bd2NST3NvbDdLbmgK"
+        ],
+        "num_matches": 1,
+        "num_redundant_matches": 0,
+        "statuses": [],
+        "comment": null,
+        "mean_score": null,
+        "matches": [
+          {
+            "provenance": [
+              {
+                "kind": "file",
+                "path": "firmware/bare-metal-demo.elf"
+              }
+            ],
+            "blob_metadata": {
+              "id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+              "num_bytes": 6844,
+              "mime_essence": null,
+              "charset": null
+            },
+            "blob_id": "cdbf8fba70c65bd9d8473a8216d30b207419c98c",
+            "location": {
+              "offset_span": {
+                "start": 4641,
+                "end": 6344
+              },
+              "source_span": {
+                "start": {
+                  "line": 2,
+                  "column": 415
+                },
+                "end": {
+                  "line": 29,
+                  "column": 25
+                }
+              }
+            },
+            "groups": [
+              "TUlJRXZnSUJBREFOQmdrcWhraUc5dzBCQVFFRkFBU0NCS2d3Z2dTa0FnRUFBb0lCQVFDMzVYSW9rczFiOTBpYwpIOEk0RFBkNXVsdFlDTW1nUXgzVWZadlcrRDlmdEpzNUs1R0oxTVpMRDMrMDZiQWFWUEZXNEljTkNha1BXN2srCmNuNE51MTRvOGRDMnBBNDlFWGtVRFlGcVk5N3BySTg5Z3BoeE1kNzBqSmdGa0xBdkwyb2FDa3ViSXFXeW5UMGoKNk80QVp4SDgxM0YwUzE1cjR4RzBKRCt6R1h4REZpSDN5c2tCTUx0dDhJdFI3V2N4RWJLeXVKZmJMb2JnMG5TVgpEeFV0eWRXNi9mcFBqM1VDOVZPc21NYjdnaFFkVnJPU1p0U1BNdG1CWnJQTkJnMDhRRFFTYWsyVHNZcmhEaXBlCkRxaWlkVjhMNzFpTVZON1VXc3RlQmJnRWsrb0pFZmc4YlZQck82TGdOakJLM0xzcEYxbU12R01UM3hWVHZ1ZEsKYTc0cFhMaVRBZ01CQUFFQ2dnRUFCeXI3M0tZQU9DMzIyQk1LMUhsNDZmZEFHVG5hZGhNM3BmRXhjbHNoeVQ2MgpjQytKRURqSmMrS0tSVWg0azBZdFZBZ1RhNGd0WFVwamVaSW41S3doZXZJV0F4QjQ5NXRuUDBkWmZJYWhDVFd2CkxhUWFBZ3VDRjhFbEtjNWVkN0JlNzkzbjNZZW5zc01iUDN1VVQxSzFLa2hSaFVsc3lFTEZEV0wrVXFKVExDQXYKUTVWRXpzZjF5TDhrYWk0Y0J1UHNTNUl0U0ErenoyTW5KSUFwbnZaNy9nLytoTWlSYk4zMW1vNFZvZTMxaFpvawovN3dTdHV0UTVDSlZvRW1NYTY4MW95UENydjBRL3daNTdsQ0RMbUxrZXZwSjdzSXV3dlBWcThDVU9UaFk5RHNPCmcvOFJybmRZYk1wNmsxYTRyMnUrRDgwcFZWaU9YNFEwVGgwbW81N096UUtCZ1FEcHhDazVNMm1tTS84bm9jNlgKMXZVbEgzU2w0MS90VzNDV1lxTGUwS25XaDdvSjUrWVAzUGw4dG1ySDlMYkFzSktkakdoS1ZYMU4xaEhxTFpTRApFUjliTHByZlloNTl1ZFlhcjlxeVoxaDhkR0JNNHY3Q1FYWFBQcjJudkp3NGo0NlJKTFlXdmxrSitWMUN4RVprCnBOTS9DTXQvUnpyVlh1S3piU21xbW8zUjV3S0JnUURKWXdlWGcvRTNoNFJXeHlyZGUzejkzZnFOWU1pLy9xV0MKb29oMS9PaGh3ZCtENU44OWEyVDM3bGdSWFZJcm9oMHExSWZqM21qek1sbEZiVGZZVUNVUyt0SG5SMlYwZDBzMAo3bkpZcHdtT2t4Sjhwa1NzRVk2V1BwKzBUYmtLanVoK3ljbzJRY2IvdFlCQUsrbXFJYy9PTW5HTmcyVXhSSVlKCkNsd0J2aENtZFFLQmdRREJRYTVpMzZJa0NUQ1Q3eTBBVW5Gd00wVVlMNVdLZ09IZk1jUThPSDF3SWQwbmUxT3oKSVpnUUJpN1pCL0pkOHB3REs2UzhiMWljRkxIU3k4UFBaMFJvK1dxSDZuSVN0cVBPaER0azZoTTVNR3k4bzV6QgpzNlJWcFNUZG13djdwcExTWTJzMStqOWFBNUdhTlBHTkdzYVpnZ2ZhUFdUaUtRTjZHbkVyM1lJSldRS0JnRkM2Ck9NM2MzeklTU2RON2JVeHhkdzVSRUdIaC9UY3hmZWxhKy9iSUZlTXlFMFpNMWN4S0k2UmJUOFJPTTJVNFRCYmkKTVVMLzRmUXpKNlB6L3lIZ0pxeHdEUHA0SFV4TmtjRTdJRzAzTUZhTjBDaFZna3V6a2dQYVFLekhSempiUm9tawpuRUdacG9yVWwvK2hXcjZQWlR6VDdiNzdmL0g2OVB2a3dqTVVuSm9OQW9HQkFMTzNGUmExTjhkZnZLZTJDTVJWClZHaEdOQjhrQzlsL3BXODByelMyb1VmT3FQTWlLQ2ZJWHY3dmVpdHYySHZNdUJUaE1qMzJjWVhvWVFYUHRlaEUKalJzTThGWDBJNU1UZjRBa1VtcERUTVU0WkdrVmdUM1k2TC9ZYzRSSTl2MlZCUGNZbTJRMzJMeVg0VExRL3pVagpJVXhZd1R4b2hmck5Bd2NST3NvbDdLbmgK"
+            ],
+            "snippet": {
+              "before": "JYV4RTU\\nAWS_SECRET_ACCESS_KEY=DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000[default]\\naws_access_key_id = ASIABECFPPCNXJYV4RTU\\naws_secret_access_key = DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\\n\u0000DS6Ml01Z4jIp04hIFM0xrNEuRSmg823/04jqugJ9\u0000ASIABECFPPCNXJYV4RTU\u0000",
+              "matching": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC35XIoks1b90ic\nH8I4DPd5ultYCMmgQx3UfZvW+D9ftJs5K5GJ1MZLD3+06bAaVPFW4IcNCakPW7k+\ncn4Nu14o8dC2pA49EXkUDYFqY97prI89gphxMd70jJgFkLAvL2oaCkubIqWynT0j\n6O4AZxH813F0S15r4xG0JD+zGXxDFiH3yskBMLtt8ItR7WcxEbKyuJfbLobg0nSV\nDxUtydW6/fpPj3UC9VOsmMb7ghQdVrOSZtSPMtmBZrPNBg08QDQSak2TsYrhDipe\nDqiidV8L71iMVN7UWsteBbgEk+oJEfg8bVPrO6LgNjBK3LspF1mMvGMT3xVTvudK\na74pXLiTAgMBAAECggEAByr73KYAOC322BMK1Hl46fdAGTnadhM3pfExclshyT62\ncC+JEDjJc+KKRUh4k0YtVAgTa4gtXUpjeZIn5KwhevIWAxB495tnP0dZfIahCTWv\nLaQaAguCF8ElKc5ed7Be793n3YenssMbP3uUT1K1KkhRhUlsyELFDWL+UqJTLCAv\nQ5VEzsf1yL8kai4cBuPsS5ItSA+zz2MnJIApnvZ7/g/+hMiRbN31mo4Voe31hZok\n/7wStutQ5CJVoEmMa681oyPCrv0Q/wZ57lCDLmLkevpJ7sIuwvPVq8CUOThY9DsO\ng/8RrndYbMp6k1a4r2u+D80pVViOX4Q0Th0mo57OzQKBgQDpxCk5M2mmM/8noc6X\n1vUlH3Sl41/tW3CWYqLe0KnWh7oJ5+YP3Pl8tmrH9LbAsJKdjGhKVX1N1hHqLZSD\nER9bLprfYh59udYar9qyZ1h8dGBM4v7CQXXPPr2nvJw4j46RJLYWvlkJ+V1CxEZk\npNM/CMt/RzrVXuKzbSmqmo3R5wKBgQDJYweXg/E3h4RWxyrde3z93fqNYMi//qWC\nooh1/Ohhwd+D5N89a2T37lgRXVIroh0q1Ifj3mjzMllFbTfYUCUS+tHnR2V0d0s0\n7nJYpwmOkxJ8pkSsEY6WPp+0TbkKjuh+yco2Qcb/tYBAK+mqIc/OMnGNg2UxRIYJ\nClwBvhCmdQKBgQDBQa5i36IkCTCT7y0AUnFwM0UYL5WKgOHfMcQ8OH1wId0ne1Oz\nIZgQBi7ZB/Jd8pwDK6S8b1icFLHSy8PPZ0Ro+WqH6nIStqPOhDtk6hM5MGy8o5zB\ns6RVpSTdmwv7ppLSY2s1+j9aA5GaNPGNGsaZggfaPWTiKQN6GnEr3YIJWQKBgFC6\nOM3c3zISSdN7bUxxdw5REGHh/Tcxfela+/bIFeMyE0ZM1cxKI6RbT8ROM2U4TBbi\nMUL/4fQzJ6Pz/yHgJqxwDPp4HUxNkcE7IG03MFaN0ChVgkuzkgPaQKzHRzjbRomk\nnEGZporUl/+hWr6PZTzT7b77f/H69PvkwjMUnJoNAoGBALO3FRa1N8dfvKe2CMRV\nVGhGNB8kC9l/pW80rzS2oUfOqPMiKCfIXv7veitv2HvMuBThMj32cYXoYQXPtehE\njRsM8FX0I5MTf4AkUmpDTMU4ZGkVgT3Y6L/Yc4RI9v2VBPcYm2Q32LyX4TLQ/zUj\nIUxYwTxohfrNAwcROsol7Knh\n-----END PRIVATE KEY-----",
+              "after": "\n\u0000OK\u0000BAD\u0000-----BEGIN RSA PRIVATE KEY-----\u0000DEMO_ACTIVE\u0000GCC: (Arm GNU Toolchain 14.2.Rel1 (Build arm-14.52)) 14.2.1 20241119\u0000A,\u0000\u0000\u0000aeabi\u0000\u0001\"\u0000\u0000\u0000\u00057-M\u0000\u0006\n\u0007M\t\u0002\u0012\u0004\u0014\u0001\u0015\u0001\u0017\u0003\u0018\u0001\u0019\u0001\u001a\u0001\u001e\u0004\"\u0001\u0000.shstrtab\u0000.text\u0000.data\u0000.bss\u0000.comment\u0000.ARM.attributes\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+            },
+            "structural_id": "5731ce2464d7b57ed6628a5e554dc3a8f36da22d",
+            "rule_structural_id": "046a96dd5272aa399275afb853a54884611769c0",
+            "rule_text_id": "np.pem.1",
+            "rule_name": "PEM-Encoded Private Key",
+            "score": null,
+            "comment": null,
+            "status": null,
+            "redundant_to": []
+          }
+        ]
+      }
+    ]
+  }
+]

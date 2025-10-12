@@ -1,0 +1,55 @@
+#!/bin/sh
+
+MOUNT_PATH="/mnt/usb"
+VOLUME_PATH="/tmp/local"
+
+die() {
+	echo $@
+	exit 1
+}
+
+showUsage() {
+	die "$0 {start|stop}"
+}
+
+mkvolume() {
+		echo "mkvolume =================================================="
+		model=$([ "$(pibinfo Wireless)" -eq 1 ] && tdb get System ModelW_ss || tdb get System Model_ss)
+		[ ! -d $MOUNT_PATH/$model ] && $MKDIR $MOUNT_PATH/$model
+		[ $model != "" ] && ln -sf $MOUNT_PATH/$model $VOLUME_PATH || echo "model is empty ==================="
+}
+
+check_sd_card() {
+	if [ -b "/dev/mmcblk0" ]; then
+		[ "$(mount | grep '/mnt/usb')" = "" ] && automount.sh mmcblk0 || mkvolume
+	fi
+}
+
+action=$1
+end=$2
+
+[ "$end" = "" ] && [ "$action" != "" ] || showUsage
+
+start() {
+	check_sd_card
+
+	echo "rc.sysextra start ok."
+}
+
+stop() {
+	echo "rc.sysextra stop ok."
+}
+
+case $action in
+	start)
+		start
+	;;
+	stop)
+		stop
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+exit 0
