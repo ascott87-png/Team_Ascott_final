@@ -1,0 +1,5 @@
+# /etc/fstab
+none	/proc	proc defaults
+tmpfs	/tmp	tmpfs	size=34m
+mdev	/dev	tmpfs	size=512k
+sysfs	/sys	sysfs

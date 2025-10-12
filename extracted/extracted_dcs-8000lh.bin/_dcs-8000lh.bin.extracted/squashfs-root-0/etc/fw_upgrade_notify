@@ -1,0 +1,19 @@
+#!/bin/sh
+
+kill_apps() {
+        /etc/rc.d/init.d/bluetoothd.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/avcd.sh stop > /dev/null 2> /dev/null
+        busybox killall -9 telnetd > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/dbus-daemon.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/wifiAutoReconnect.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/mdnsd.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/logd.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/ntpd.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/rtspd.sh stop > /dev/null 2> /dev/null
+        /etc/rc.d/init.d/myDlinkEvent.sh stop > /dev/null 2> /dev/null
+}
+
+kill_apps
+
+sleep 1
+echo 3 > /proc/sys/vm/drop_caches

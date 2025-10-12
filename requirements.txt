@@ -1,0 +1,12 @@
+# Python Deps
+# Python 3.10+ required
+
+# System tools required (install via apt):
+# - binwalk: sudo apt install binwalk
+# - sasquatch dependencies:
+#     sudo apt-get install zlib1g-dev liblzma-dev liblzo2-dev
+#     git clone https://github.com/devttys0/sasquatch
+#     (cd sasquatch && ./build.sh)
+
+# Install Nosey Parker (Need to have Homebrew installed)
+# - noseyparker: brew install noseyparker

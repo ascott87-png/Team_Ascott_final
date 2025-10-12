@@ -1,0 +1,66 @@
+#!/bin/sh
+
+confIPv6() {
+	ipv6_interface=$1
+	ipv6_autoip=$(tdb get IPv6 AutoIP_byte)
+	ipv6_manualip=$(tdb get IPv6 ManualIP_byte)
+
+	echo 0 > /proc/sys/net/ipv6/conf/$ipv6_interface/autoconf
+	echo 0 > /proc/sys/net/ipv6/conf/$ipv6_interface/accept_ra
+	/sbin/ipv6_release
+
+	[ -f "/tmp/ipv6_invalid" ] && rm -f /var/lib/dibbler/*
+	[ -f "/tmp/ipv6_invalid" ] && rm -f /tmp/ipv6_invalid
+
+	if [ "$ipv6_autoip" = "1" ] && [ "$ipv6_manualip" = "0" ]; then
+		echo 1 > /proc/sys/net/ipv6/conf/$ipv6_interface/autoconf
+		echo 1 > /proc/sys/net/ipv6/conf/$ipv6_interface/accept_ra
+
+		[ -e /etc/dibbler/client.conf ] && sed -i -r -e "s@iface .*@iface $ipv6_interface@" /etc/dibbler/client.conf
+#		[ -x /sbin/dibbler-client ] && /sbin/dibbler-client start || return 1
+		/etc/rc.d/init.d/dibbler.sh start 
+		return 0
+	elif [ "$ipv6_autoip" = "0" ] && [ "$ipv6_manualip" = "1" ]; then
+		ipv6_address=$(tdb get IPv6 Address_ls)
+		ipv6_prefix=$(tdb get IPv6 Prefix_byte)
+		ipv6_gateway=$(tdb get IPv6 Gateway_ls)
+		ipv6_dns1=$(tdb get IPv6 PrimaryDNS_ls)
+		ipv6_dns2=$(tdb get IPv6 SecondDNS_ls)
+		echo 0 > /proc/sys/net/ipv6/conf/$ipv6_interface/autoconf	
+		ip addr add $ipv6_address/$ipv6_prefix dev $ipv6_interface || return 1
+
+		#If ipv6 gateway doesn't begin with "fe80", then it have to add network ID before default route.
+		ipv6_gateway_network_id=$(/sbin/ipv6_get_network_id $ipv6_gateway $ipv6_prefix $ipv6_gateway)
+                ipv6_gateway_network_id_prefix=$(echo $ipv6_gateway_network_id | cut -d ":" -f1)
+                if [ $ipv6_gateway_network_id_prefix != 'fe80' ]; then
+                        ip -6 route add $ipv6_gateway/$ipv6_prefix dev $ipv6_interface
+                fi 
+
+		#other way to do routing settings
+		#ip -6 route del ::/0 via fe80::248:54ff:fe5b:cb9d dev eth0
+		#ip -6 route add ::/0 via fe80::248:54ff:fe5b:cb99 dev eth0
+		route -A inet6 add ::/0 gw $ipv6_gateway dev $ipv6_interface
+		if [ "$?" = "0" ]; then
+			[ "$ipv6_dns1" != "" ] && echo "nameserver $ipv6_dns1" >> /etc/resolv.conf
+			[ "$ipv6_dns2" != "" ] && echo "nameserver $ipv6_dns2" >> /etc/resolv.conf
+		else
+			ip addr del $ipv6_address/$ipv6_prefix dev $ipv6_interface && return 1
+		fi
+	else
+		return 1 
+	fi	
+	return 0
+}
+
+network_setup
+
+IPv6_Enabled=$(tdb get IPv6 Enable_byte)
+Wireless_Enabled=$(tdb get Wireless Enable_byte)
+if [ $IPv6_Enabled -eq "1" ]; then 
+	if [ $Wireless_Enabled -eq "1" ]; then 
+		confIPv6 wlan0
+	else
+		confIPv6 eth0
+	fi
+fi
+

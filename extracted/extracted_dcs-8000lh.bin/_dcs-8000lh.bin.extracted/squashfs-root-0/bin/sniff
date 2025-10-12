@@ -1,0 +1,88 @@
+#!/bin/sh
+
+die() {
+	echo "$@"
+	exit 1
+}
+
+daemon="watchdog"
+
+showUsage() {
+	die "sniff [factory|wps|in1|in2|in3|in4|lightsensor|pir|privacy|out1|speakerAmp]"
+#	die "sniff [factory|wps|in1|in2|in3|in4|led|out1|lipan|litilt|lenspower|pir]"
+}
+
+target=$1
+end=$2
+
+[ $target ] || showUsage
+[ $end ] && showUsage
+
+# for cmd list, looks at apps/include/command.h
+case $target in
+	factory)
+		cmd=610
+	;;
+	wps)
+		cmd=611
+	;;
+	led)
+		cmd=780
+	;;
+	in1)
+		cmd=615
+	;;
+        in2)
+                cmd=616
+        ;;
+        in3)
+                cmd=617
+        ;;
+        in4)
+                cmd=618
+        ;;
+	out1)
+		cmd=620
+	;;
+	pir)
+		[ -x /sbin/watchPir ] && daemon="watchpir"
+		cmd=646
+	;;
+	ir)
+		cmd=655
+	;;
+	lightsensor)
+		cmd=661
+	;;
+	icr)
+		cmd=664
+	;;
+	lipan)
+		cmd=670
+	;;
+	litilt)
+		cmd=671
+	;;
+	lenspower)
+		cmd=684
+	;;
+	privacy)
+		cmd=689
+	;;
+	speakerAmp)
+		cmd=692
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+value=$(send_cmd $daemon $cmd) || exit 1
+case $target in
+	lightsensor)
+	echo $value
+	;;
+	*)
+	[ $value = 1 ] && echo on || echo off
+	;;
+esac

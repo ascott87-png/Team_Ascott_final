@@ -1,0 +1,291 @@
+#!/bin/sh
+
+die() {
+	echo $@
+	exit 1
+}
+
+showUsage() {
+	die "$0 {start|stop}"
+}
+
+action=$1
+end=$2
+
+[ "$end" = "" ] && [ "$action" != "" ] || showUsage
+
+probeRt61() {
+	cat /proc/pci 2> /dev/null | grep -q 'PCI.*1814:030[12]'
+}
+
+probeRt2860() {
+	cat /proc/pci 2> /dev/null | grep -q 'PCI.*1814:060[12]'
+}
+
+probeRTLDongle() {
+	[ -f /proc/bus/usb/devices ] && cat /proc/bus/usb/devices | grep -q 'Vendor=0bda' || lsusb | grep -q 0bda
+}
+
+probeMTDongle() {
+	[ -f /proc/bus/usb/devices ] && cat /proc/bus/usb/devices | grep -q 'Vendor=148f' || lsusb | grep -q 148f
+}
+
+probeWireless() {
+	probeRTLDongle || probeMTDongle
+}
+
+handleEfuseMode () {
+	if [ "$(pibinfo EfuseBufferMode)" = "0" ]
+	then
+		if [ "$1" == AP ]
+		then
+			local profile_path=/etc/RT2870AP.dat
+		else
+			local profile_path=/etc/RT2870STA.dat
+		fi
+
+		local buffer_mode_flag=`cat $profile_path | grep EfuseBufferMode=1`
+
+		if [ -n "$buffer_mode_flag" ]
+		then
+			sed -i -e 's/EfuseBufferMode=1/EfuseBufferMode=0/g' "$profile_path"
+		fi
+	fi
+}
+
+insertRTL8192EU () {
+	if [ "$(pibinfo BootMode)" = "mfg"  ]; then
+		insmod /lib/modules/8192eu.ko rtw_channel_plan=$(pibinfo Region)
+	else
+		insmod /lib/modules/8192eu.ko rtw_channel_plan=$(pibinfo Region) rtw_initmac=$(pibinfo MacAddress)
+	fi
+}
+
+insertRTL8188EU () {
+	if [ "$(pibinfo BootMode)" = "mfg"  ]; then
+		insmod /lib/modules/8188eu.ko rtw_channel_plan=$(pibinfo Region)
+	else
+		insmod /lib/modules/8188eu.ko rtw_channel_plan=$(pibinfo Region) rtw_initmac=$(pibinfo MacAddress)
+	fi
+}
+
+insertRTL8723BU () {
+	if [ "$(pibinfo BootMode)" = "mfg"  ]; then
+		insmod /lib/modules/8723bu.ko rtw_channel_plan=$(pibinfo Region)
+	else
+		insmod /lib/modules/8723bu.ko rtw_channel_plan=$(pibinfo Region) rtw_initmac=$(pibinfo MacAddress)
+	fi
+	gen_btconfig_rtl8723bu /lib/firmware/rtl8723bu_config.orig /tmp/rtl8723bu_config
+	insmod /lib/modules/rtk_btusb.ko
+}
+
+insertRT5370 () {
+	handleEfuseMode STA
+	cp -f /etc/RT5370_USB_1T1R_MAIN_V1_6.BIN /tmp/RT5370_USB_1T1R_MAIN_V1_6.BIN && \
+	pibinfo getEfuseBuffer | uudecode || \
+	cat /etc/RT5370_USB_1T1R_MAIN_V1_6.BIN | uuencode /tmp/RT5370_USB_1T1R_MAIN_V1_6.BIN \
+	| pibinfo setEfuseBuffer && \
+	insmod /lib/modules/rtutil5370sta.ko && \
+	insmod /lib/modules/rt5370sta.ko && \
+	insmod /lib/modules/rtnet5370sta.ko mac="$MAC_b1:$MAC_b2:$MAC_b3:$MAC_b4:$MAC_b5:$MAC_b6"
+}
+
+insertRT3070 () {
+	insmod /lib/modules/rtutil3070sta.ko && \
+	insmod /lib/modules/rt3070sta.ko && \
+	insmod /lib/modules/rtnet3070sta.ko mac="$MAC_b1:$MAC_b2:$MAC_b3:$MAC_b4:$MAC_b5:$MAC_b6"
+}
+
+insertMT7601 () {
+	handleEfuseMode STA
+	cp -f /etc/MT7601EEPROM.bin /tmp/MT7601EEPROM.bin && \
+	pibinfo getEfuseBuffer | uudecode || \
+	cat /etc/MT7601EEPROM.bin | uuencode /tmp/MT7601EEPROM.bin \
+	| pibinfo setEfuseBuffer && \
+	insmod /lib/modules/mtutil7601Usta.ko && \
+	insmod /lib/modules/mt7601Usta.ko && \
+	insmod /lib/modules/mtnet7601Usta.ko mac="$MAC_b1:$MAC_b2:$MAC_b3:$MAC_b4:$MAC_b5:$MAC_b6"
+}
+
+insertMT7601_AP () {
+	handleEfuseMode AP
+
+	cp -f /etc/MT7601EEPROM.bin /tmp/MT7601EEPROM.bin
+
+	if [ "$(pibinfo EfuseBufferMode)" != "0" ]; then 
+		pibinfo getEfuseBuffer | uudecode || \
+		cat /etc/MT7601EEPROM.bin | uuencode /tmp/MT7601EEPROM.bin \
+		| pibinfo setEfuseBuffer
+	fi	
+	
+	insmod /lib/modules/mt7601Uap.ko mac="$MAC_b1:$MAC_b2:$MAC_b3:$MAC_b4:$MAC_b5:$MAC_b6"
+}
+
+mountSD () {
+	if [ -b "/dev/mmcblk0" ]; then
+		automount.sh mmcblk0
+	else
+		echo "No SD Device Path Exists."
+	fi
+
+}
+mountFS () {
+
+	mount -t proc proc /proc
+	/bin/hostname -F /etc/hostname
+	mount /tmp
+	mount /dev
+	mkdir /dev/pts
+	mount -t devpts devpts /dev/pts
+	mount -t sysfs sysfs /sys
+	mount -t usbfs none /proc/bus/usb
+}
+
+mkMTDNode () {
+	i=0 
+	j=0
+	while [ $j -le 9 ]; do
+		rm /dev/mtd$j
+		mknod "/dev/mtd$j" c 90 $i
+		let i=$i+2 
+		let j=$j+1
+	done
+}
+
+start() {
+	# Be careful! Do not chagnge the command sequence, 
+	# unless you very sure about what are you doing!
+	mountFS
+	
+	# create static dev node
+	mknod /dev/gpio c 252 0
+
+	# Link device mtd partition 
+	ln -s /dev/mtdblock1 /dev/mtd_pib
+	ln -s /dev/mtdblock3 /dev/mtd_xmldb
+	ln -s /dev/mtdblock4 /dev/mtd_log
+	ln -s /dev/mtdblock5 /dev/mtd_xmldb_bak
+	ln -s /dev/mtdblock6 /dev/mtd_log_bak
+	ln -s /dev/mtdblock7 /dev/mtd_zimage
+
+	# create dir under tmp
+	mkdir /tmp/rtsp-bin
+	mkdir /tmp/dibbler
+
+	echo /sbin/mdev > /proc/sys/kernel/hotplug
+	mdev -s
+	
+	# for work around
+	mkMTDNode 
+
+	#create mtd.txt for firmware update
+	dmesg  | grep -re "^0x" > /tmp/mtd.txt
+
+	#Run boot scripts for insert modules,
+	#but it only insert some modules which db need
+	sh /startkit/boot.sh
+
+	# move here for tinydb
+	ifconfig lo 127.0.0.1 up
+
+	# get data from tdb to produce mem.conf and boot.sh
+	/etc/rc.d/init.d/xmldb.sh start
+	/etc/rc.d/init.d/dbd.sh start
+
+	# Setting time and date
+	[ -e /dev/misc/rtc ] && hwclock -s -u
+
+	YEAR_BOUND=2017
+	MONTH_BOUND=06
+	DAY_BOUND=07
+        DATE_YEAR=`date | cut -c 25-28`
+        if [ "$DATE_YEAR" -lt "$YEAR_BOUND" -o "$DATE_YEAR" = "" ]; then
+                echo "set the date to default:"
+                date $MONTH_BOUND$DAY_BOUND"0000"$YEAR_BOUND
+                [ -e /dev/misc/rtc ] && hwclock -w -u
+        fi
+
+	# Set up eth0
+	ifconfig eth0 down
+	ifconfig eth0 hw ether $(pibinfo MacAddress)
+	ifconfig eth0 up
+
+	ifconfig eth0 0.0.0.0
+
+	if [ "$(pibinfo BootMode)" = "mfg" ]; then
+		telnetd -l /bin/sh
+	fi
+
+	echo 0 > /proc/sys/kernel/printk
+
+	mount /dev/mtdblock2 /opt || echo no optfs exist
+
+#	# change the default value of tcp live time from 120mins to 15mins
+	echo 900 > /proc/sys/net/ipv4/tcp_keepalive_time
+
+	# pool buddy need multicast at lo interface
+	route add 231.1.1.1 dev lo
+
+
+	if probeWireless; then
+		echo 1 > /tmp/debug_level
+		# insert wireless modules,
+		# please make sure mount /tmp before insmod wireless moduless
+		MAC_Addr=$(pibinfo MacAddress)
+		MAC_b1=$(echo $MAC_Addr | cut -d':' -f1)
+		MAC_b2=$(echo $MAC_Addr | cut -d':' -f2)
+		MAC_b3=$(echo $MAC_Addr | cut -d':' -f3)
+		MAC_b4=$(echo $MAC_Addr | cut -d':' -f4)
+		MAC_b5=$(echo $MAC_Addr | cut -d':' -f5)
+		MAC_b6=$(echo $MAC_Addr | cut -d':' -f6)
+
+		[ -f /lib/modules/8192eu.ko ] && insertRTL8192EU
+		[ -f /lib/modules/8188eu.ko ] && insertRTL8188EU
+		[ -f /lib/modules/8723bu.ko ] && insertRTL8723BU
+		[ -f /lib/modules/rt5370sta.ko ] && insertRT5370
+		[ -f /lib/modules/rt3070sta.ko ] && insertRT3070
+		[ -f /lib/modules/mt7601Usta.ko ] && insertMT7601
+		[ -f /lib/modules/mt7601Uap.ko ] && insertMT7601_AP
+
+		# Don't remove this. The file(/tmp/WirelessModel) will be used to identify wire/wireless model.
+		echo "WirelessModel Identified." > /tmp/WirelessModel	
+
+		sleep 2
+		if [ -f /lib/modules/mt7601Uap.ko ]; then
+			# ra0 need wait a litte while to up after driver insert, and we should keep apcli0 up for later site survey if needed.
+#( ifconfig ra0 up && iwpriv ra0 set RadioOn=0 && ifconfig apcli0 up && iwpriv apcli0 set ApCliEnable=0 ) > /dev/null 2> /dev/null &
+			ifconfig ra0 up
+		else
+			ifconfig wlan0 up # wlan0 need wait a litte while to up after driver insert.
+		fi
+		/sbin/wifi-led &
+	fi
+	/etc/rc.d/init.d/dbd.sh setDefaultDB
+
+	mountSD
+
+	# Init ble device.
+	[ -e /sbin/init_ble_device.sh ] && /sbin/init_ble_device.sh 
+
+	echo "rc.sysinit start ok."
+}
+
+stop() {
+	#/etc/rc.d/init.d/upnp_av.sh stop
+	#hwclock -w -u
+	echo "rc.sysinit stop ok."
+}
+
+case $action in
+	start)
+		start
+	;;
+	stop)
+		stop
+	;;
+	*)
+		showUsage
+	;;
+esac
+
+exit 0
