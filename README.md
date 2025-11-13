@@ -17,11 +17,17 @@ Our client, AVENGERS Manufacturing, requested a security analysis of their new I
 The goal of this assessment is to evaluate the security of both the microcontroller and flash memory, identify weaknesses, and extract five required flags:
 
 UART Flag
+
 Password Cracking Flag
+
 Internal MCU Flash Flag
+
 External SPI Flash Flag
+
 Secret Stream Flag
+
 All flags are in the format:
+
 FLAG{SECRET_VALUE_HERE}
 
 The project includes interacting with hardware interfaces, dumping memory, cracking hashes, and collecting data streams exposed by the device.
