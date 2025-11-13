@@ -1,14 +1,15 @@
 **Team Ascott IoT / Hardware Security Assessment**
 
-Course: COSC 6840 
+**Course:** COSC 6840 
 
-Student: Alyssa Scott
+**Student:** Alyssa Scott
 
-Project: Final Project “The Node” Assessment
+**Project:** Final Project “The Node” Assessment
 
-Client: AVENGERS Manufacturing, Inc.
+**Client:** AVENGERS Manufacturing, Inc.
 
-Project Overview
+**Project Overview:**
+
 This repository contains all work for the IoT and Hardware Security Assessment Final Project.
 
 Our client, AVENGERS Manufacturing, requested a security analysis of their new IoT device, “The Node.” The device collects sensitive data in an industrial environment and will be deployed at scale, meaning attackers may have physical access.
