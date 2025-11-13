@@ -39,10 +39,49 @@ The project includes interacting with hardware interfaces, dumping memory, crack
 - **SPI** — External flash extraction  
 - **Additional streaming interface** — For secret data stream flag  
 
----
+Repository Structure
+Team_Ascott/
+├── fw_triage.py
+├── README.md
+├── findings.md
+├── extracted/
+│   ├── mcu_internal.extracted/
+│   └── spi_flash.extracted/
+├── screenshots/
+├── report/
+│   └── final.pdf
+└── slides/
+    └── deck.pdf
 
-## 📁 Repository Structure
+Tools Used
+Hardware Tools:
+• FT232RL USB-to-Serial Adapter (UART)
+• ST-Link v2 Programmer (SWD)
+• CH341a or Bus Pirate (SPI Flash)
+• Jumper wires
+• Debug headers on The Node device
 
-This repo follows the required template:
+Software Tools:
+• screen / minicom
+• OpenOCD
+• flashrom
+• xxd, grep, binwalk
+• hashcat, John the Ripper, CrackStation
+• Python 3.x
+
+Running the Script
+Example usage:
+python3 fw_triage.py --port /dev/ttyUSB0 --baud 9600
+
+Findings Summary
+Detailed results and flag values will be documented in findings.md.
+
+Final Deliverables
+• Final Report: report/final.pdf
+• Slide Deck: slides/deck.pdf
+• Evidence Screenshots: screenshots/
+
+
+
 
 
