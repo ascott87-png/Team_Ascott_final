@@ -1,12 +1,48 @@
-# Python Deps
-# Python 3.10+ required
+#!/bin/bash
 
-# System tools required (install via apt):
-# - binwalk: sudo apt install binwalk
-# - sasquatch dependencies:
-#     sudo apt-get install zlib1g-dev liblzma-dev liblzo2-dev
-#     git clone https://github.com/devttys0/sasquatch
-#     (cd sasquatch && ./build.sh)
+echo "==========================================="
+echo "  IoT & Hardware Security Final Project"
+echo "  Automatic Environment Setup Script
+echo "==========================================="
 
-# Install Nosey Parker (Need to have Homebrew installed)
-# - noseyparker: brew install noseyparker
+# Update system
+echo "[+] Updating system packages..."
+sudo apt-get update -y
+
+echo
+echo "[+] Installing required system tools..."
+
+# screen - UART terminal tool
+sudo apt-get install -y screen
+
+# OpenOCD - SWD debugger tool
+sudo apt-get install -y openocd
+
+# telnet - Connect to OpenOCD server
+sudo apt-get install -y telnet
+
+# flashrom - External SPI flash tool
+sudo apt-get install -y flashrom
+
+# xxd - Hex dump utility (comes with vim-common)
+sudo apt-get install -y vim-common
+
+# grep (usually preinstalled)
+sudo apt-get install -y grep
+
+echo
+echo "[+] Installing Python dependencies..."
+pip3 install -r requirements.txt
+
+echo
+echo "==========================================="
+echo "  Setup Complete!"
+echo "  Installed tools:"
+echo "    - screen"
+echo "    - openocd"
+echo "    - telnet"
+echo "    - flashrom"
+echo "    - xxd"
+echo "    - grep"
+echo "    - Python dependencies from requirements.txt"
+echo "==========================================="
