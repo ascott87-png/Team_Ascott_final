@@ -1,5 +1,6 @@
-Team Ascott — IoT / Hardware Security Assessment
-Course: COSC 6840 Student: Alyssa Scott
+**Team Ascott IoT / Hardware Security Assessment**
+Course: COSC 6840 
+Student: Alyssa Scott
 Project: Final Project “The Node” Assessment
 Client: AVENGERS Manufacturing, Inc.
 
