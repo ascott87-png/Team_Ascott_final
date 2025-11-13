@@ -1,1 +1,0 @@
-../init.d/dbd.sh

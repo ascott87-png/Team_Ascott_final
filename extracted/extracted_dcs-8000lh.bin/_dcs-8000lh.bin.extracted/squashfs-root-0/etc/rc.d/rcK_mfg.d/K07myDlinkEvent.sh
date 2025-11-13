@@ -1,1 +1,0 @@
-../init.d/myDlinkEvent.sh

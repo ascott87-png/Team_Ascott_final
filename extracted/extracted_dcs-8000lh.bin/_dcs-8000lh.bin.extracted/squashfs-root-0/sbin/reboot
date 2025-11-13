@@ -1,3 +1,0 @@
-#!/bin/sh
-/etc/rc.d/rcK stop
-/bin/busybox reboot $*

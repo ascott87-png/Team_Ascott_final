@@ -1,1 +1,0 @@
-../init.d/create_certificate.sh

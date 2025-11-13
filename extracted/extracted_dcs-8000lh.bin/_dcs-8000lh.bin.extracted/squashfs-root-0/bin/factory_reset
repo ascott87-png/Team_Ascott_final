@@ -1,7 +1,0 @@
-#!/bin/sh
-
-factoryReset
-
-sleep 3
-echo "System rebooting....."
-reboot
