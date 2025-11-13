@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "==========================================="
-echo "  IoT & Hardware Security Final Project"
-echo "  Automatic Environment Setup Script
-echo "==========================================="
+ "==========================================="
+ "  IoT & Hardware Security Final Project"
+ "  Automatic Environment Setup Script
+ "==========================================="
 
 # Update system
-echo "[+] Updating system packages..."
+ "[+] Updating system packages..."
 sudo apt-get update -y
 
-echo
-echo "[+] Installing required system tools..."
+
+ "[+] Installing required system tools..."
 
 # screen - UART terminal tool
 sudo apt-get install -y screen
@@ -30,19 +30,19 @@ sudo apt-get install -y vim-common
 # grep (usually preinstalled)
 sudo apt-get install -y grep
 
-echo
-echo "[+] Installing Python dependencies..."
+
+ "[+] Installing Python dependencies..."
 pip3 install -r requirements.txt
 
-echo
-echo "==========================================="
-echo "  Setup Complete!"
-echo "  Installed tools:"
-echo "    - screen"
-echo "    - openocd"
-echo "    - telnet"
-echo "    - flashrom"
-echo "    - xxd"
-echo "    - grep"
-echo "    - Python dependencies from requirements.txt"
-echo "==========================================="
+
+ "==========================================="
+ "  Setup Complete!"
+ "  Installed tools:"
+ "    - screen"
+ "    - openocd"
+ "    - telnet"
+ "    - flashrom"
+ "    - xxd"
+ "    - grep"
+ "    - Python dependencies from requirements.txt"
+ "==========================================="
